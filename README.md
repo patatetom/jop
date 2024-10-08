@@ -6,23 +6,30 @@
 
 ## Computer
 
-- download `LessPass.html` HTML file to your computer
-- check the code
-- create a shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
+- Download `LessPass.html` HTML file to your computer
+- Check the code
+- Create a shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
 
 
 ## Smartphone
+
+### Android
+
+> _Direct use of the `file` schema (eg. `file:///sdcard/path/to/LessPass.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
+
+
+### iOS
 
 
 
 ## Translation
 
-- open the HTML file with your favorite code editor
-- in the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
-- rename the new function with the two letters of the desired language
-- translate the few character strings present in the new function
-- save changes
-- reload the HTML file from your favorite browser
+- Open the HTML file with your favorite code editor
+- In the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
+- Rename the new function with the two letters of the desired language
+- Translate the few character strings present in the new function
+- Save changes
+- Reload the HTML file from your favorite browser
 
 ```js
 // french
@@ -37,4 +44,4 @@ function de() {
 	…}
 ```
 
-> _your translation is welcome ;-)_
+> _Your translation is welcome ;-)_
