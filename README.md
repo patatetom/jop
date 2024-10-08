@@ -17,6 +17,12 @@
 
 > _Direct use of the `file` schema (eg. `file:///sdcard/path/to/LessPass.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
 
+- Install [Simple HTTP Server](https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
+- Set an empty folder as the `Root folder`
+- Restrict network interfaces to `lo` (eg. `127.0.0.1`)
+- Autostart at boot
+- Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
+- Create a shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
 ### iOS
 
