@@ -12,3 +12,29 @@
 
 
 ## smartphone
+
+
+
+## translation
+
+- open the HTML file with your favorite code editor
+- in the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
+- rename the new function with the two letters of the desired language
+- translate the few character strings present in the new function
+- save changes
+- reload the HTML file from your favorite browser
+
+```js
+// french
+function fr() {
+	document.documentElement.lang = "fr";
+	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
+	…}
+// Deutsch
+function de() {
+	document.documentElement.lang = "de";
+	document.head.querySelector('meta[name="description"]').content = "Passwortgenerator";
+	…}
+```
+
+> _your translation is welcome ;-)_
