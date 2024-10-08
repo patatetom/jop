@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!--
+head --------------------------------------------------------------------------
+-->
+<head>
+<title>LessPass 🚀</title>
+<meta charset="utf-8"/>
+<meta name="description" content="Password generator"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="author" content="Patatetom (b9065a2c6fe4a957980e230cdd1ac9b349ce4660)"/>
+<meta name="publisher" content="https://github.com/patatetom/lesspass"/>
+<!--
+style -------------------------------------------------------------------------
+-->
+<style type="text/css">
+.container {
+	font-family: sans-serif;
+	background-color: CornflowerBlue;
+	max-width: 14rem;
+	margin: auto;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+h2 {
+	color: white;
+	-webkit-user-select: none;
+	user-select: none;
+}
+img {
+	vertical-align: middle;
+	width: 1rem;
+	filter: invert(1);
+}
+input {
+	margin: .25rem;
+}
+input[type=text]:invalid {
+	background-color: LightPink;
+}
+@supports (-webkit-text-security: square) {
+	#secret {
+		-webkit-text-security: square;
+	}
+	#secret::placeholder {
+		-webkit-text-security: none;
+	}
+}
+@supports not (-webkit-text-security: square) {
+	#secret {
+		text-decoration-line: line-through;
+		text-decoration-style: double;
+		text-decoration-thickness: .5rem;
+	}
+	#secret::placeholder {
+		text-decoration-line: none;
+	}
+}
+#password {
+	color: AliceBlue;
+	background-color: CornflowerBlue;
+}
+</style>
+</head>
+<!--
+body --------------------------------------------------------------------------
+-->
+<body>
+<div class="container">
+<h2>
+LessPass&nbsp;
+<img alt="LessPass" style="vertical-align: bottom; width: 3rem" src="data: image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PHBhdGggZD0iTTE4IDguNWEyLjUgMi41IDAgMCAxLTUgMCAyLjUgMi41IDAgMCAxIDUgMFptLS4wMDYgNi44NjZhMTEuMDY1IDExLjA2NSAwIDAgMS0xLjE2MyA0LjU2OUE3LjYzNCA3LjYzNCAwIDAgMSAxMCAyNEg5di01LjVBMy41MTcgMy41MTcgMCAwIDAgNS41IDE1SDB2LTFhNy42MzQgNy42MzQgMCAwIDEgNC4wNjUtNi44MzEgMTEuMDY1IDExLjA2NSAwIDAgMSA0LjU2OS0xLjE2M0ExNS40ODcgMTUuNDg3IDAgMCAxIDIwLjk3MiAwIDMuMDA5IDMuMDA5IDAgMCAxIDI0IDNhMTUuNTA3IDE1LjUwNyAwIDAgMS02LjAwNiAxMi4zNjZaTTIuMDg0IDEzaDIuMjYyYTM0LjM2MSAzNC4zNjEgMCAwIDEgMi42MDktNC43NjMgOC45OTMgOC45OTMgMCAwIDAtMS45OTMuNzJBNS41MTkgNS41MTkgMCAwIDAgMi4wODQgMTNabTEzLjY3OSA0LjA0NUEzNC4zNjEgMzQuMzYxIDAgMCAxIDExIDE5LjY1NHYyLjI2MmE1LjUxOSA1LjUxOSAwIDAgMCA0LjA0My0yLjg3OCA4Ljk5MyA4Ljk5MyAwIDAgMCAuNzItMS45OTNaTTIyIDIuOTcyQTEgMSAwIDAgMCAyMSAyYy01LjE2LjE0Ny04LjY1IDIuMTI0LTEyLjAxOCA2LjgyMmEyOS45MiAyOS45MiAwIDAgMC0yLjQ3MSA0LjI3MSA1LjUgNS41IDAgMCAxIDQuNCA0LjQgMjkuOTIgMjkuOTIgMCAwIDAgNC4yNzEtMi40NzFDMTkuODc2IDExLjY1IDIxLjg1MyA4LjE2IDIyIDIuOTcyWk02LjEyMiAxNy44NzlhMy4wMTUgMy4wMTUgMCAwIDEgMCA0LjI0MmMtLjkwNy45MDYtMy42MjIgMS40NjUtNC43NDggMS42NjRsLTEuNDA2LjI0Ny4yNDctMS40MDZjLjItMS4xMjYuNzU4LTMuODQxIDEuNjY0LTQuNzQ4YTMuMDczIDMuMDczIDAgMCAxIDQuMjQzLjAwMVpNNSAyMGEuOTkzLjk5MyAwIDAgMC0uMjkzLS43MDcgMSAxIDAgMCAwLTEuNDE0IDBBNy4zMTggNy4zMTggMCAwIDAgMi41IDIxLjVhNy4zNDIgNy4zNDIgMCAwIDAgMi4yMDgtLjc5NEEuOTkzLjk5MyAwIDAgMCA1IDIwWiIvPjwvc3ZnPg=="/>
+</h2>
+<form id="lesspass">
+<!-- TODO: attribut list for services -->
+<input id="service" name="service" required type="text" minlength="2" pattern="^(\+|-)?[1-9]? +.{3,}|^[^ 1-9+\-]..+" placeholder="Service" autocomplete="on" autofocus/>
+<img id="clear" alt="Clear form" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaG9tZSI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiI+PC9wYXRoPjxwb2x5bGluZSBwb2ludHM9IjkgMjIgOSAxMiAxNSAxMiAxNSAyMiI+PC9wb2x5bGluZT48L3N2Zz4="/>
+<br/>
+<input id="secret" required type="text" minlength="3" placeholder="Secret" autocomplete="off"/>
+<img id="show" alt="Show/hide secret" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW5zdGFncmFtIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHJ4PSI1IiByeT0iNSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiAxMS4zN0E0IDQgMCAxIDEgMTIuNjMgOCA0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg=="/>
+<br/>
+<input id="generate" type="submit" value="Generate ⚙"/>
+<br/>
+<input id="password" type="text" placeholder="Password" readonly="true"/>
+<img id="copy" alt="Copy password to clipboard" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItcGFwZXJjbGlwIj48cGF0aCBkPSJNMjEuNDQgMTEuMDVsLTkuMTkgOS4xOWE2IDYgMCAwIDEtOC40OS04LjQ5bDkuMTktOS4xOWE0IDQgMCAwIDEgNS42NiA1LjY2bC05LjIgOS4xOWEyIDIgMCAwIDEtMi44My0yLjgzbDguNDktOC40OCI+PC9wYXRoPjwvc3ZnPg=="/>
+</form>
+</div>
+<!--
+script ------------------------------------------------------------------------
+-->
+<script>
+// language (use fr template to create a new language) ------------------------
+// french
+function fr() {
+	document.documentElement.lang = "fr";
+	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
+	clear.alt = "Nettoyer le formulaire";
+	show.alt = "Afficher/masquer le secret";
+	generate.value = "Générer ⚙";
+	password.placeholder = "Mot de passe";
+}
+// call "language" function
+if (navigator.language) {
+	const language = navigator.language.split("-")[0];
+	if (language && language !== "en") {
+		try {window[language]()} catch (error) {true};
+	}
+}
+// events ---------------------------------------------------------------------
+var displayTimer;
+// timer reset if changes
+service.addEventListener("input", function() {
+	password.value = "";
+	clearTimeout(displayTimer);
+});
+secret.addEventListener("input", function() {
+	password.value = "";
+	clearTimeout(displayTimer);
+});
+// clear form
+clear.addEventListener("click", function() {
+	password.value = "";
+	secret.value = "";
+	service.value = "";
+	service.focus();
+});
+// display/hide secret
+show.addEventListener("click", function() {
+	if (secret.value) {
+		if (CSS.supports("-webkit-text-security", "square")) {
+			secret.style.WebkitTextSecurity = secret.style.WebkitTextSecurity == "unset" ? "square" : "unset";
+		} else {
+			secret.style.textDecorationLine = secret.style.textDecorationLine == "none" ? "line-through" : "none";
+		}
+	}
+	secret.focus();
+});
+// copy password to clipboard
+copy.addEventListener("click", copyPassword);
+async function copyPassword() {
+	if (secret.value) {
+		try {
+			await navigator.clipboard.writeText(password.value);
+		} catch (error) {
+			password.select();
+			document.execCommand("copy");
+		}
+		service.focus();
+	}
+}
+// form processing
+lesspass.addEventListener("submit", generatePassword);
+function generatePassword(event) {
+	event.preventDefault();
+	service.value = service.value.trim();
+	secret.value = secret.value.trim();
+	if (!service.value || service.validity.tooShort || service.validity.patternMismatch) {
+		service.focus()
+	} else if (!secret.value || secret.validity.tooShort) {
+		secret.focus()
+	} else {
+		let salt = service.value.trim();
+		const master = secret.value.trim();
+		// hide secret
+		if (CSS.supports("-webkit-text-security", "square")) {
+			secret.style.WebkitTextSecurity = "square";
+		} else {
+			secret.style.textDecorationLine = "line-through";
+		}
+		// defaults values
+		let rank = "1";
+		let symbol = true;
+		// symbol and rank from flag if supplied
+		const flag = salt.match(/^(\+|-)?([1-9]?) +(.{3,})/);
+		if (flag) {
+			salt = flag.at(-1).trim();
+			rank = flag.at(-2) || "1";
+			symbol = flag.at(-3) !== "-" ? true : false;
+		}
+		// generate password
+		generatePasswordFromPBKDF2(master, (salt + "#" + rank), symbol);
+		// timer set-up
+		clearTimeout(displayTimer);
+		displayTimer = setTimeout(function(){
+			// programmed deletion of secret and password
+			secret.value = "";
+			password.value = "";
+			secret.style.textDecorationLine = "none";
+		}, 30000);
+		service.focus();
+	}
+}
+// pbkdf2 webcrypto browser ---------------------------------------------------
+async function generatePasswordFromPBKDF2(master, salt, symbol) {
+	const encode = new TextEncoder();
+	const importedKey = await window.crypto.subtle.importKey("raw", encode.encode(master), "pbkdf2", false, ["deriveBits"]);
+	const derivedBits = await window.crypto.subtle.deriveBits({name: "pbkdf2", salt: encode.encode(salt), iterations: 1e4, hash: "sha-256"}, importedKey, 256);
+	const arrayDerivedBits = new Uint8Array(derivedBits, 0, 32);
+	password.value = _render_password(toHex(arrayDerivedBits), 16, symbol);
+}
+const toHex = function(byteArray) {
+	return Array.from(byteArray, byte => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join('');
+}
+// lesspass from python -------------------------------------------------------
+// https://github.com/lesspass/lesspass/blob/8.0.2/cli/lesspass/password.py
+const lowercase = "abcdefghijklmnopqrstuvwxyz";
+const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const digits = "0123456789";
+const symbols = "(.,;:!?)[=+-*/&|]{#$%@_~}";
+function _get_set_of_characters(symbol) {
+	const characters = lowercase + digits + uppercase + (symbol && symbols || "");
+	return characters;
+}
+function _consume_entropy(password, entropy, length, characters) {
+	if (password.length >= length) return [password, entropy];
+	const byte = parseInt(entropy.slice(-2), 16);
+	return (
+		entropy = entropy.slice(0, -1),
+		password += characters[byte % characters.length],
+		_consume_entropy(password, entropy, length, characters)
+	);
+}
+function _insert_characters_pseudo_randomly(password, entropy, sample) {
+	for (index in sample) {
+		var byte = parseInt(entropy.slice(-2), 16);
+		var length = byte % password.length;
+		password = password.slice(0, length) + sample[index] + password.slice(length), entropy = entropy.slice(0, -1);
+	};
+	return password;
+}
+function _get_one_character_per_set(entropy, symbol) {
+	var sample = "";
+	var [character, entropy] = _consume_entropy("", entropy, 1, lowercase);
+	return (
+		sample += character,
+		[character, entropy] = _consume_entropy("", entropy, 1, uppercase),
+		sample += character,
+		[character, entropy] = _consume_entropy("", entropy, 1, digits),
+		sample += character,
+		symbol && (
+			[character, entropy] = _consume_entropy("", entropy, 1, symbols),
+			sample += character
+		),
+		[sample, entropy]
+	);
+}
+function _render_password(entropy, length, symbol) {
+	const characters = _get_set_of_characters(symbol);
+	length -= symbol ? 4 : 3;
+	var [password, entropy] = _consume_entropy("", entropy, length, characters);
+	var [sample, entropy] = _get_one_character_per_set(entropy, symbol);
+	return _insert_characters_pseudo_randomly(password, entropy, sample);
+}
+</script>
+</body>
+</html>
