@@ -4,18 +4,18 @@
 
 # Installation
 
-## computer
+## Computer
 
 - download `LessPass.html` HTML file to your computer
 - check the code
 - create a shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
 
 
-## smartphone
+## Smartphone
 
 
 
-## translation
+## Translation
 
 - open the HTML file with your favorite code editor
 - in the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
