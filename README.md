@@ -32,7 +32,7 @@ TODO
 ## Translation
 
 - Open the HTML file with your favorite code editor
-- In the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
+- In the `language` section of the `script` section, copy/paste or rename the existing `fr(){…}` function
 - Rename the new function with the two letters of the desired language
 - Translate the few `"character strings"` present in the new function
 - Save changes
