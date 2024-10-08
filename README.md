@@ -20,12 +20,13 @@
 - Install [Simple HTTP Server](https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
 - Set an empty folder as the `Root folder`
 - Restrict network interfaces to `lo` (eg. `127.0.0.1`)
-- Autostart at boot
+- Set `Autostart at boot`
 - Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
 - Create a shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
 ### iOS
 
+TODO
 
 
 ## Translation
@@ -33,7 +34,7 @@
 - Open the HTML file with your favorite code editor
 - In the `language` section of the `script` section, copy and paste the existing `fr(){…}` function
 - Rename the new function with the two letters of the desired language
-- Translate the few character strings present in the new function
+- Translate the few `"character strings"` present in the new function
 - Save changes
 - Reload the HTML file from your favorite browser
 
@@ -43,7 +44,7 @@ function fr() {
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
 	…}
-// Deutsch
+// deutsch
 function de() {
 	document.documentElement.lang = "de";
 	document.head.querySelector('meta[name="description"]').content = "Passwortgenerator";
