@@ -19,7 +19,7 @@ Managing a multitude of unique, long and complex passwords has never been easy, 
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
 
-> _Some services do not allow the use of special characters in password : the service prefix prevents their use._
+> _Some services do not allow the use of special characters in password : the service prefix `-` prevents their use._
 
 
 
@@ -37,6 +37,12 @@ The service must be at least 3 characters long.
 
 The prefix, which is optional and precedes the service, is used to influence password generation.
 It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?`.
+
+A few commented examples of prefixes are sometimes better than a long speech :
+- `myservice`, `+ myservice`, `1 myservice` and `+1 myservice` (eg. no prefix, `+`, `1` and `+1`) target the same service `myservice` and will generate for this one a first password
+- `- myservice` and `-1 myservice` (eg. `-` and `-1`) target the same service `myservice` and will generate for this one a first password without special characters (for example, in case this one doesn't allow their use)
+- `2 myservice` or `+2 myservice` (eg. `2` or `+2`) target the same service `myservice` and will generate for this one a second password (for example, if the first/previous password had to be changed for security reasons)
+- `-3 myservice` (eg. `-3`) target the service `myservice` and will generate for this one a third password without special characters
 
 
 ## Secret
