@@ -2,6 +2,10 @@
 
 🔑 **In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
 
+LessPass is an extremely simple solution based on opening/playing/rendering a small HTML-CSS-JS file in a recent web browser (for user interface and password calculation).
+LessPass works completely offline.
+
+
 # Installation
 
 ## Computer
