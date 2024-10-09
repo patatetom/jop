@@ -39,10 +39,12 @@ The prefix, which is optional and precedes the service, is used to influence pas
 It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?`.
 
 A few commented examples of prefixes are sometimes better than a long speech :
-- `myservice`, `+ myservice`, `1 myservice` and `+1 myservice` (eg. no prefix, `+`, `1` and `+1`) target the same service `myservice` and will generate for this one a first password
+- `myservice`, `+ myservice`, `1 myservice` and `+1 myservice` (eg. no prefix, `+`, `1` and `+1`) target the same service `myservice` and will generate for this one a first full password
 - `- myservice` and `-1 myservice` (eg. `-` and `-1`) target the same service `myservice` and will generate for this one a first password without special characters (for example, in case this one doesn't allow their use)
-- `2 myservice` or `+2 myservice` (eg. `2` or `+2`) target the same service `myservice` and will generate for this one a second password (for example, if the first/previous password had to be changed for security reasons)
+- `2 myservice` or `+2 myservice` (eg. `2` or `+2`) target the same service `myservice` and will generate for this one a second full password (for example, if the first/previous password had to be changed for security reasons)
 - `-3 myservice` (eg. `-3`) target the service `myservice` and will generate for this one a third password without special characters
+
+> _The prefix must be separated from the service to distinguish `2 myservice` (second full password for the service `myservice`) from `2myservice` (first full password for the service `2myservice`)._
 
 
 ## Secret
