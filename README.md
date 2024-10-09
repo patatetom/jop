@@ -20,6 +20,16 @@ This number is then used to select characters from a set set of 26 lower-case le
 > _Some services do not allow the use of special characters in password : the service prefix prevents their use._
 
 
+# Service, prefix and secret
+
+## Service
+
+Service (and its possible prefix) is one of the two pieces of information to be provided and therefore remembered.
+The service must be at least 3 characters long.
+
+> _For best recall, it's best to choose simple, easy-to-remember forms : `gmail` and `yahoo`, for example, for the respective e-mail services, `pseudo1@gmail` and `pseudo2@gmail` to distinguish two Gmail accounts, etc…_
+
+
 # Installation
 
 ## Computer
@@ -49,7 +59,7 @@ This number is then used to select characters from a set set of 26 lower-case le
 
 ### iOS
 
-> _TODO..._<br/>
+> _TODO…_<br/>
 > _no iOS system yet : help would be appreciated._
 
 
