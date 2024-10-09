@@ -27,7 +27,7 @@
 - Check the code
 - Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
-<img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.png" height="390px"/>
+<img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.firefox.png" height="390px"/>
 
 ### iOS
 
