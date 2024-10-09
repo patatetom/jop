@@ -1,4 +1,4 @@
-<p><img alt="LessPass" src="LessPassword.png" width="210px"/></p>
+<img alt="LessPass" src="LessPassword.png" width="210px"/>
 
 🔑 **In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
 
@@ -9,6 +9,8 @@
 - Download `LessPass.html` HTML file to your computer
 - Check the code
 - Create a shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
+
+<img alt="Chromium" src="computer.chromium.png" width="310px"/> <img alt="Firefox" src="computer.firefox.png" width="310px"/>
 
 
 ## Smartphone
