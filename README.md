@@ -26,6 +26,8 @@
 - Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
 - Create a shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
+<img alt="Android" src="android.png" height="390px"/>
+
 ### iOS
 
 TODO
