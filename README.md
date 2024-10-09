@@ -8,9 +8,10 @@
 
 - Download `LessPass.html` HTML file to your computer
 - Check the code
-- Create a shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
+- Create a desktop shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
 
-<img alt="Chromium" src="computer.chromium.png" width="310px"/> <img alt="Firefox" src="computer.firefox.png" width="310px"/>
+<img alt="Chromium" src="computer.chromium.png" width="310px"/>
+<img alt="Firefox" src="computer.firefox.png" width="310px"/>
 
 
 ## Smartphone
@@ -24,13 +25,14 @@
 - Restrict network interfaces to `lo` (eg. `127.0.0.1`)
 - Set `Autostart at boot`
 - Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
-- Create a shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
+- Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
-<img alt="Android" src="android.png" height="390px"/>
+<img alt="Android" src="android.simpleHTTPserver.png" height="390px"/>  <img alt="Android" src="android.png" height="390px"/>
 
 ### iOS
 
-TODO
+> _TODO..._<br/>
+> _no iOS system yet : help would be appreciated._
 
 
 ## Translation
