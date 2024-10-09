@@ -12,6 +12,12 @@ Managing a multitude of unique, long and complex passwords has never been easy, 
 > As an astronaut friend of mine used to say : _“Don't wait for this kind of mishap to happen before getting into LessPass”_.
 
 
+# How is the password generated ?
+
+The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
+This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 uppercase letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
+
+
 # Installation
 
 ## Computer
