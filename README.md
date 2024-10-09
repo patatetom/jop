@@ -9,13 +9,15 @@ LessPass is an extremely simple offline solution based on a small HTML-CSS-JS fi
 
 Managing a multitude of unique, long and complex passwords has never been easy, even with an internal or external password manager, especially when switching from one browser to another, from one computer to another and from one smartphone to another !
 
-> As an astronaut friend of mine used to say : _“Don't wait for this kind of mishap to happen before getting into LessPass”_.
+> _As an astronaut friend of mine used to say : “Don't wait for this kind of mishap to happen before getting into LessPass !”_.
 
 
 # How is the password generated ?
 
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
-This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 uppercase letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
+This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
+
+> _Some services do not allow the use of special characters in password : the service prefix prevents their use._
 
 
 # Installation
