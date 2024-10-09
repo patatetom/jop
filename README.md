@@ -49,6 +49,7 @@ LessPass works completely offline.
 - Reload the HTML file from your favorite browser
 
 ```js
+// language (use fr template to create a new language) ------------------------
 // french
 function fr() {
 	document.documentElement.lang = "fr";
