@@ -24,6 +24,7 @@
 - Restrict network interfaces to `lo` (eg. `127.0.0.1`)
 - Set `Autostart at boot`
 - Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
+- Check the code
 - Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
 
 <img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.png" height="390px"/>
