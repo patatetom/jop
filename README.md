@@ -35,6 +35,9 @@ The service must be at least 3 characters long.
 
 ## Prefix
 
+The prefix, which is optional and precedes the service, is used to influence password generation.
+It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?`.
+
 
 ## Secret
 
