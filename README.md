@@ -4,17 +4,13 @@
 
 LessPass is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser for the user interface and password génération.
 
-
-
-# Why LessPass ?
-
-Managing a multitude of unique, long and complex passwords has never been easy, even with an internal or external password manager, especially when switching from one browser to another, from one computer to another and from one smartphone to another !
+_Managing a multitude of unique, long and complex passwords has never been easy, even with an internal or external password manager, especially when switching from one browser to another, from one computer to another and from one smartphone to another !_
 
 > _As an astronaut friend of mine used to say : “Don't wait for this kind of mishap to happen before getting into LessPass !”_.
 
 
 
-# How is the password generated ?
+# Password generation
 
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
@@ -36,7 +32,7 @@ The service must be at least 3 characters long.
 ## Prefix
 
 The prefix, which is optional and precedes the service, is used to influence password generation.
-It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?`.
+It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?` (eg. at the beginning, possibly a plus or a minus, possibly followed by a digit between 1 and 9, the whole necessarily followed by at least one space).
 
 A few commented examples of prefixed services are sometimes better than a long speech :
 - `myservice`, `+ myservice`, `1 myservice` and `+1 myservice` (eg. no prefix, `+`, `1` and `+1`) target the same service `myservice` and will generate for this last one a _first full password_
