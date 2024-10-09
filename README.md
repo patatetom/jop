@@ -5,11 +5,13 @@
 LessPass is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser for the user interface and password génération.
 
 
+
 # Why LessPass ?
 
 Managing a multitude of unique, long and complex passwords has never been easy, even with an internal or external password manager, especially when switching from one browser to another, from one computer to another and from one smartphone to another !
 
 > _As an astronaut friend of mine used to say : “Don't wait for this kind of mishap to happen before getting into LessPass !”_.
+
 
 
 # How is the password generated ?
@@ -20,6 +22,7 @@ This number is then used to select characters from a set set of 26 lower-case le
 > _Some services do not allow the use of special characters in password : the service prefix prevents their use._
 
 
+
 # Service, prefix and secret
 
 ## Service
@@ -28,6 +31,18 @@ Service (and its possible prefix) is one of the two pieces of information to be 
 The service must be at least 3 characters long.
 
 > _For best recall, it's best to choose simple, easy-to-remember forms : `gmail` and `yahoo`, for example, for the respective e-mail services, `pseudo1@gmail` and `pseudo2@gmail` to distinguish two Gmail accounts, etc…_
+
+
+## Prefix
+
+
+## Secret
+
+Secret is one of the two pieces of information to be provided and therefore retained.
+No complexity is required for the secret, which must be at least 3 characters long.
+
+> _However, it is preferable to use a robust secret._
+
 
 
 # Installation
@@ -57,10 +72,12 @@ The service must be at least 3 characters long.
 
 <img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.firefox.png" height="390px"/>
 
+
 ### iOS
 
 > _TODO…_<br/>
 > _no iOS system yet : help would be appreciated._
+
 
 
 ## Translation
