@@ -72,12 +72,12 @@ LessPass&nbsp;
 <img alt="LessPass" style="vertical-align: bottom; width: 3rem" src="data: image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PHBhdGggZD0iTTE4IDguNWEyLjUgMi41IDAgMCAxLTUgMCAyLjUgMi41IDAgMCAxIDUgMFptLS4wMDYgNi44NjZhMTEuMDY1IDExLjA2NSAwIDAgMS0xLjE2MyA0LjU2OUE3LjYzNCA3LjYzNCAwIDAgMSAxMCAyNEg5di01LjVBMy41MTcgMy41MTcgMCAwIDAgNS41IDE1SDB2LTFhNy42MzQgNy42MzQgMCAwIDEgNC4wNjUtNi44MzEgMTEuMDY1IDExLjA2NSAwIDAgMSA0LjU2OS0xLjE2M0ExNS40ODcgMTUuNDg3IDAgMCAxIDIwLjk3MiAwIDMuMDA5IDMuMDA5IDAgMCAxIDI0IDNhMTUuNTA3IDE1LjUwNyAwIDAgMS02LjAwNiAxMi4zNjZaTTIuMDg0IDEzaDIuMjYyYTM0LjM2MSAzNC4zNjEgMCAwIDEgMi42MDktNC43NjMgOC45OTMgOC45OTMgMCAwIDAtMS45OTMuNzJBNS41MTkgNS41MTkgMCAwIDAgMi4wODQgMTNabTEzLjY3OSA0LjA0NUEzNC4zNjEgMzQuMzYxIDAgMCAxIDExIDE5LjY1NHYyLjI2MmE1LjUxOSA1LjUxOSAwIDAgMCA0LjA0My0yLjg3OCA4Ljk5MyA4Ljk5MyAwIDAgMCAuNzItMS45OTNaTTIyIDIuOTcyQTEgMSAwIDAgMCAyMSAyYy01LjE2LjE0Ny04LjY1IDIuMTI0LTEyLjAxOCA2LjgyMmEyOS45MiAyOS45MiAwIDAgMC0yLjQ3MSA0LjI3MSA1LjUgNS41IDAgMCAxIDQuNCA0LjQgMjkuOTIgMjkuOTIgMCAwIDAgNC4yNzEtMi40NzFDMTkuODc2IDExLjY1IDIxLjg1MyA4LjE2IDIyIDIuOTcyWk02LjEyMiAxNy44NzlhMy4wMTUgMy4wMTUgMCAwIDEgMCA0LjI0MmMtLjkwNy45MDYtMy42MjIgMS40NjUtNC43NDggMS42NjRsLTEuNDA2LjI0Ny4yNDctMS40MDZjLjItMS4xMjYuNzU4LTMuODQxIDEuNjY0LTQuNzQ4YTMuMDczIDMuMDczIDAgMCAxIDQuMjQzLjAwMVpNNSAyMGEuOTkzLjk5MyAwIDAgMC0uMjkzLS43MDcgMSAxIDAgMCAwLTEuNDE0IDBBNy4zMTggNy4zMTggMCAwIDAgMi41IDIxLjVhNy4zNDIgNy4zNDIgMCAwIDAgMi4yMDgtLjc5NEEuOTkzLjk5MyAwIDAgMCA1IDIwWiIvPjwvc3ZnPg=="/>
 </h2>
-<form id="lesspass">
-<input id="service" name="service" required type="text" minlength="2" pattern="^(\+|-)?[1-9]? +.{3,}|^[^ 1-9+\-]..+" placeholder="Service" autocomplete="on" autofocus/>
+<form id="lesspass" autocomplete="off">
+<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus/>
 <img id="clear" alt="Clear form" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaG9tZSI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiI+PC9wYXRoPjxwb2x5bGluZSBwb2ludHM9IjkgMjIgOSAxMiAxNSAxMiAxNSAyMiI+PC9wb2x5bGluZT48L3N2Zz4="/>
 <br/>
-<input id="secret" required type="text" minlength="3" placeholder="Secret" autocomplete="off"/>
+<input id="secret" required type="text" minlength="3" placeholder="Secret"/>
 <img id="show" alt="Show/hide secret" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW5zdGFncmFtIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHJ4PSI1IiByeT0iNSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiAxMS4zN0E0IDQgMCAxIDEgMTIuNjMgOCA0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg=="/>
 <br/>
@@ -88,6 +88,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItcGFwZXJjbGlwIj48cGF0aCBkPSJNMjEuNDQgMTEuMDVsLTkuMTkgOS4xOWE2IDYgMCAwIDEtOC40OS04LjQ5bDkuMTktOS4xOWE0IDQgMCAwIDEgNS42NiA1LjY2bC05LjIgOS4xOWEyIDIgMCAwIDEtMi44My0yLjgzbDguNDktOC40OCI+PC9wYXRoPjwvc3ZnPg=="/>
 </form>
 </div>
+<datalist id="services"></datalist>
 <!--
 script ------------------------------------------------------------------------
 -->
@@ -109,6 +110,9 @@ if (navigator.language) {
 		try {window[language]()} catch (error) {true};
 	}
 }
+// services -------------------------------------------------------------------
+service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
+services.innerHTML = window.localStorage.getItem("services");
 // events ---------------------------------------------------------------------
 var displayTimer;
 // timer reset if changes
@@ -190,6 +194,13 @@ function generatePassword(event) {
 			password.value = "";
 			secret.style.textDecorationLine = "none";
 		}, 30000);
+		// save list of services
+		// TODO: add only if absent
+		let list = services.innerHTML;
+		list = list.replace('"></option>', '"/>')
+		list += '<option value="' + service.value + '"/>';
+		window.localStorage.setItem("services", list);
+		services.innerHTML = list;
 		service.focus();
 	}
 }
