@@ -8,7 +8,7 @@ _Managing a multitude of unique, long and complex passwords has never been easy,
 
 
 
-# Password generation
+## Password generation
 
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
@@ -17,9 +17,9 @@ This number is then used to select characters from a set set of 26 lower-case le
 
 
 
-# Service, prefix and secret
+## Service, prefix and secret
 
-## Service
+### Service
 
 Service (and its possible prefix) is one of the two pieces of information to be provided and therefore remembered.
 The service must be at least 3 characters long.
@@ -27,7 +27,7 @@ The service must be at least 3 characters long.
 > _For best recall, it's best to choose simple, easy-to-remember forms : `gmail` and `yahoo`, for example, for the respective e-mail services, `pseudo1@gmail` and `pseudo2@gmail` to distinguish two Gmail accounts, etc…_
 
 
-## Prefix
+### Prefix
 
 The prefix, which is optional and precedes the service, is used to influence password generation.
 It must be separated from the service by at least one space and have the following form `^((\+|-)?[1-9]? +)?` (eg. at the beginning, possibly a plus or a minus, possibly followed by a digit between 1 and 9, the whole necessarily followed by at least one space).
@@ -41,7 +41,7 @@ A few commented examples of prefixed services are sometimes better than a long s
 > _The prefix must be separated from the service to distinguish `2 myservice` (second full password for the service `myservice`) from `2myservice` (first full password for the service `2myservice`)._
 
 
-## Secret
+### Secret
 
 Secret is one of the two pieces of information to be provided and therefore retained.
 No complexity is required for the secret, which must be at least 3 characters long.
@@ -50,9 +50,9 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 
 
-# Installation
+## Installation
 
-## Computer
+### Computer
 
 - Download `jop.html` HTML file to your computer
 - Check the code
@@ -61,9 +61,9 @@ No complexity is required for the secret, which must be at least 3 characters lo
 <img alt="Chromium" src="computer.chromium.png" width="310px"/><br/><img alt="Firefox" src="computer.firefox.png" width="310px"/>
 
 
-## Smartphone
+### Smartphone
 
-### Android
+#### Android
 
 > _Direct use of the `file` schema (eg. `file:///sdcard/path/to/jop.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
 
@@ -78,7 +78,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 <img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.firefox.png" height="390px"/>
 
 
-### iOS
+#### iOS
 
 > _TODO…_<br/>
 > _no iOS system yet : help would be appreciated._
