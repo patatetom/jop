@@ -1,12 +1,10 @@
-<img alt="LessPass" src="LessPassword.png" width="210px"/>
+<img alt="LessPass" src="jop.png" width="210px"/>
 
 🔑 **In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
 
-LessPass is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser for the user interface and password génération.
+**JOP** is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser for the user interface and password génération.
 
 _Managing a multitude of unique, long and complex passwords has never been easy, even with an internal or external password manager, especially when switching from one browser to another, from one computer to another and from one smartphone to another !_
-
-> _As an astronaut friend of mine used to say : “Don't wait for this kind of mishap to happen before getting into LessPass !”_.
 
 
 
@@ -56,9 +54,9 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ## Computer
 
-- Download `LessPass.html` HTML file to your computer
+- Download `jop.html` HTML file to your computer
 - Check the code
-- Create a desktop shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/LessPass.html`)
+- Create a desktop shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/jop.html`)
 
 <img alt="Chromium" src="computer.chromium.png" width="310px"/><br/><img alt="Firefox" src="computer.firefox.png" width="310px"/>
 
@@ -67,15 +65,15 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ### Android
 
-> _Direct use of the `file` schema (eg. `file:///sdcard/path/to/LessPass.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
+> _Direct use of the `file` schema (eg. `file:///sdcard/path/to/jop.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
 
 - Install [Simple HTTP Server](https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
 - Set an empty folder as the `Root folder`
 - Restrict network interfaces to `lo` (eg. `127.0.0.1`)
 - Set `Autostart at boot`
-- Download `LessPass.html` HTML file to the empty folder defined as `Root folder`
+- Download `jop.html` HTML file to the empty folder defined as `Root folder`
 - Check the code
-- Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/LessPass.html` URL
+- Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/jop.html` URL
 
 <img alt="Android" src="android.simpleHTTPserver.png" height="390px"/> <img alt="Android" src="android.firefox.png" height="390px"/>
 
