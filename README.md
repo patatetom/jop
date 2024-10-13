@@ -1,6 +1,6 @@
-<img alt="LessPass" src="jop.png" width="210px"/>
+<img alt="LessPass" src="jop.png" width="210px" style="filter:invert(1)"/>
 
-🔑 **In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
+**In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
 
 **JOP** is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser for the user interface and password génération.
 
