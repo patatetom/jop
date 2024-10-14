@@ -116,10 +116,13 @@ if (navigator.language) {
 }
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
-var providers = JSON.parse(window.localStorage.getItem("services"));
+var providers;
+try{
+	providers = JSON.parse(window.localStorage.getItem("services"));
+} catch { providers = []; }
 try {
 	providers.forEach(
-		service => services.innerHTML += ('<option value="' + service + '"/>')
+		service => services.innerHTML += ('<option value="' + service + '">' + service + '</option>')
 	);
 } catch { providers = []; }
 // events ---------------------------------------------------------------------
@@ -206,8 +209,10 @@ function generatePassword(event) {
 		// save list of services
 		if (!providers.includes(service.value)) {
 			providers.push(service.value)
-			services.innerHTML += '<option value="' + service.value + '"/>';
-			window.localStorage.setItem("services", JSON.stringify(providers));
+			services.innerHTML += ('<option value="' + service.value + '">' + service.value + '</option>');
+			try {
+				window.localStorage.setItem("services", JSON.stringify(providers));
+			} catch { true; }
 		}
 		service.focus();
 	}
