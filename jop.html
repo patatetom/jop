@@ -80,17 +80,17 @@ body --------------------------------------------------------------------------
 	<h1>JOP***<span>_<span></h1>
 	<form id="jop" autocomplete="off">
 		<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus />
-		<img id="clear" alt="Clear form" src="data:image/svg+xml;base64,	
+		<img id="clear" title="Clear form" src="data:image/svg+xml;base64,	
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaG9tZSI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiI+PC9wYXRoPjxwb2x5bGluZSBwb2ludHM9IjkgMjIgOSAxMiAxNSAxMiAxNSAyMiI+PC9wb2x5bGluZT48L3N2Zz4=" />
 		<br />
 		<input id="secret" required type="text" minlength="3" placeholder="Secret" />
-		<img id="show" alt="Show/hide secret" src="data:image/svg+xml;base64,
+		<img id="show" title="Show/hide secret" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW5zdGFncmFtIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHJ4PSI1IiByeT0iNSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiAxMS4zN0E0IDQgMCAxIDEgMTIuNjMgOCA0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg==" />
 		<br />
 		<input id="generate" type="submit" value="Generate ⚙" />
 		<br />
 		<input id="password" type="text" placeholder="Password" readonly="true" />
-		<img id="copy" alt="Copy password to clipboard" src="data:image/svg+xml;base64,
+		<img id="copy" title="Copy password to clipboard" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItcGFwZXJjbGlwIj48cGF0aCBkPSJNMjEuNDQgMTEuMDVsLTkuMTkgOS4xOWE2IDYgMCAwIDEtOC40OS04LjQ5bDkuMTktOS4xOWE0IDQgMCAwIDEgNS42NiA1LjY2bC05LjIgOS4xOWEyIDIgMCAwIDEtMi44My0yLjgzbDguNDktOC40OCI+PC9wYXRoPjwvc3ZnPg==" />
 	</form>
 </div>
@@ -104,8 +104,9 @@ script ------------------------------------------------------------------------
 function fr() {
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
-	clear.alt = "Nettoyer le formulaire";
-	show.alt = "Afficher/masquer le secret";
+	clear.title = "Nettoyer le formulaire";
+	show.title = "Afficher/masquer le secret";
+	copy.title = "Copier le mot de passe vers le presse-papiers";
 	generate.value = "Générer ⚙";
 	password.placeholder = "Mot de passe";
 };
@@ -113,13 +114,17 @@ function fr() {
 if (navigator.language) {
 	const language = navigator.language.split("-")[0];
 	if (language && language !== "en") {
-		try {window[language]()} catch (error) {true};
+		try {
+			window[language]();
+		} catch {
+			true;
+		};
 	};
 };
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
 var providers;
-try{
+try {
 	providers = JSON.parse(window.localStorage.getItem("services"));
 } catch {
 	providers = [];
@@ -218,8 +223,10 @@ function generatePassword(event) {
 			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
-			} catch { true; }
-		}
+			} catch {
+				true;
+			};
+		};
 		service.focus();
 	};
 };
