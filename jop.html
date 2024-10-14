@@ -28,11 +28,6 @@ h1 {
 	margin: .5rem;
 	-webkit-user-select: none;
 	user-select: none;
-	/*
-	border: solid;
-	text-align: center;
-	border-radius: .5rem;
-	*/
 }
 h1 span {
 	animation: blinker 1s linear infinite;
@@ -121,7 +116,10 @@ if (navigator.language) {
 }
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
-services.innerHTML = window.localStorage.getItem("services");
+var providers = [] || JSON.parse(window.localStorage.getItem("services"));
+providers.forEach(
+	service => services.innerHTML += ('<option value="' + service + '"/>')
+);
 // events ---------------------------------------------------------------------
 var displayTimer;
 // timer reset if changes
@@ -204,12 +202,11 @@ function generatePassword(event) {
 			secret.style.textDecorationLine = "none";
 		}, 30000);
 		// save list of services
-		// TODO: add only if absent
-		let list = services.innerHTML;
-		list = list.replace('"></option>', '"/>')
-		list += '<option value="' + service.value + '"/>';
-		window.localStorage.setItem("services", list);
-		services.innerHTML = list;
+		if (!providers.includes(service.value)) {
+			providers.push(service.value)
+			services.innerHTML += '<option value="' + service.value + '"/>';
+			window.localStorage.setItem("services", JSON.stringify(providers));
+		}
 		service.focus();
 	}
 }
