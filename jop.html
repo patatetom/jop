@@ -122,7 +122,7 @@ try{
 } catch { providers = []; }
 try {
 	providers.forEach(
-		service => services.innerHTML += ('<option value="' + service + '">' + service + '</option>')
+		service => services.innerHTML += ('<option value="' + service + '"/>')
 	);
 } catch { providers = []; }
 // events ---------------------------------------------------------------------
@@ -209,7 +209,7 @@ function generatePassword(event) {
 		// save list of services
 		if (!providers.includes(service.value)) {
 			providers.push(service.value)
-			services.innerHTML += ('<option value="' + service.value + '">' + service.value + '</option>');
+			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
 			} catch { true; }
