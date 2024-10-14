@@ -5,18 +5,18 @@ head --------------------------------------------------------------------------
 -->
 <head>
 <title>JOP***_</title>
-<meta charset="utf-8"/>
-<meta name="description" content="Password generator"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="author" content="Patatetom (b9065a2c6fe4a957980e230cdd1ac9b349ce4660)"/>
-<meta name="publisher" content="https://github.com/patatetom/jop"/>
+<meta charset="utf-8" />
+<meta name="description" content="Password generator" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Patatetom (b9065a2c6fe4a957980e230cdd1ac9b349ce4660)" />
+<meta name="publisher" content="https://github.com/patatetom/jop" />
 <!--
 style -------------------------------------------------------------------------
 -->
 <style type="text/css">
 .container {
 	font-family: arial;
-	background-color: CornflowerBlue;
+	background-color: cornflowerBlue;
 	max-width: 14rem;
 	margin: auto;
 	padding: 1rem;
@@ -25,7 +25,7 @@ style -------------------------------------------------------------------------
 h1 {
 	color: white;
 	font-size: 2.5rem;
-	margin: .5rem;
+	margin: 0.5rem;
 	-webkit-user-select: none;
 	user-select: none;
 }
@@ -33,7 +33,9 @@ h1 span {
 	animation: blinker 1s linear infinite;
 }
 @keyframes blinker {
-	50% {opacity: 0;}
+	50% {
+		opacity: 0;
+	}
 }
 img {
 	vertical-align: middle;
@@ -41,10 +43,10 @@ img {
 	filter: invert(1);
 }
 input {
-	margin: .25rem;
+	margin: 0.25rem;
 }
-input[type=text]:invalid {
-	background-color: LightPink;
+input[type="text"]:invalid {
+	background-color: lightPink;
 }
 @supports (-webkit-text-security: square) {
 	#secret {
@@ -58,15 +60,15 @@ input[type=text]:invalid {
 	#secret {
 		text-decoration-line: line-through;
 		text-decoration-style: double;
-		text-decoration-thickness: .5rem;
+		text-decoration-thickness: 0.5rem;
 	}
 	#secret::placeholder {
 		text-decoration-line: none;
 	}
 }
 #password {
-	color: AliceBlue;
-	background-color: CornflowerBlue;
+	color: aliceBlue;
+	background-color: cornflowerBlue;
 }
 </style>
 </head>
@@ -75,22 +77,22 @@ body --------------------------------------------------------------------------
 -->
 <body>
 <div class="container">
-<h1>JOP***<span>_<span></h1>
-<form id="jop" autocomplete="off">
-<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus/>
-<img id="clear" alt="Clear form" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaG9tZSI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiI+PC9wYXRoPjxwb2x5bGluZSBwb2ludHM9IjkgMjIgOSAxMiAxNSAxMiAxNSAyMiI+PC9wb2x5bGluZT48L3N2Zz4="/>
-<br/>
-<input id="secret" required type="text" minlength="3" placeholder="Secret"/>
-<img id="show" alt="Show/hide secret" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW5zdGFncmFtIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHJ4PSI1IiByeT0iNSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiAxMS4zN0E0IDQgMCAxIDEgMTIuNjMgOCA0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg=="/>
-<br/>
-<input id="generate" type="submit" value="Generate ⚙"/>
-<br/>
-<input id="password" type="text" placeholder="Password" readonly="true"/>
-<img id="copy" alt="Copy password to clipboard" src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItcGFwZXJjbGlwIj48cGF0aCBkPSJNMjEuNDQgMTEuMDVsLTkuMTkgOS4xOWE2IDYgMCAwIDEtOC40OS04LjQ5bDkuMTktOS4xOWE0IDQgMCAwIDEgNS42NiA1LjY2bC05LjIgOS4xOWEyIDIgMCAwIDEtMi44My0yLjgzbDguNDktOC40OCI+PC9wYXRoPjwvc3ZnPg=="/>
-</form>
+	<h1>JOP***<span>_<span></h1>
+	<form id="jop" autocomplete="off">
+		<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus />
+		<img id="clear" alt="Clear form" src="data:image/svg+xml;base64,	
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaG9tZSI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiI+PC9wYXRoPjxwb2x5bGluZSBwb2ludHM9IjkgMjIgOSAxMiAxNSAxMiAxNSAyMiI+PC9wb2x5bGluZT48L3N2Zz4=" />
+		<br />
+		<input id="secret" required type="text" minlength="3" placeholder="Secret" />
+		<img id="show" alt="Show/hide secret" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItaW5zdGFncmFtIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHJ4PSI1IiByeT0iNSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiAxMS4zN0E0IDQgMCAxIDEgMTIuNjMgOCA0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg==" />
+		<br />
+		<input id="generate" type="submit" value="Generate ⚙" />
+		<br />
+		<input id="password" type="text" placeholder="Password" readonly="true" />
+		<img id="copy" alt="Copy password to clipboard" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItcGFwZXJjbGlwIj48cGF0aCBkPSJNMjEuNDQgMTEuMDVsLTkuMTkgOS4xOWE2IDYgMCAwIDEtOC40OS04LjQ5bDkuMTktOS4xOWE0IDQgMCAwIDEgNS42NiA1LjY2bC05LjIgOS4xOWEyIDIgMCAwIDEtMi44My0yLjgzbDguNDktOC40OCI+PC9wYXRoPjwvc3ZnPg==" />
+	</form>
 </div>
 <datalist id="services"></datalist>
 <!--
