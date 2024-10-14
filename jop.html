@@ -108,25 +108,29 @@ function fr() {
 	show.alt = "Afficher/masquer le secret";
 	generate.value = "Générer ⚙";
 	password.placeholder = "Mot de passe";
-}
+};
 // call "language" function
 if (navigator.language) {
 	const language = navigator.language.split("-")[0];
 	if (language && language !== "en") {
 		try {window[language]()} catch (error) {true};
-	}
-}
+	};
+};
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
 var providers;
 try{
 	providers = JSON.parse(window.localStorage.getItem("services"));
-} catch { providers = []; }
+} catch {
+	providers = [];
+};
 try {
 	providers.forEach(
 		service => services.innerHTML += ('<option value="' + service + '"/>')
 	);
-} catch { providers = []; }
+} catch {
+	providers = [];
+};
 // events ---------------------------------------------------------------------
 var displayTimer;
 // timer reset if changes
@@ -152,8 +156,8 @@ show.addEventListener("click", function() {
 			secret.style.WebkitTextSecurity = secret.style.WebkitTextSecurity == "unset" ? "square" : "unset";
 		} else {
 			secret.style.textDecorationLine = secret.style.textDecorationLine == "none" ? "line-through" : "none";
-		}
-	}
+		};
+	};
 	secret.focus();
 });
 // copy password to clipboard
@@ -162,13 +166,13 @@ async function copyPassword() {
 	if (secret.value) {
 		try {
 			await navigator.clipboard.writeText(password.value);
-		} catch (error) {
+		} catch {
 			password.select();
 			document.execCommand("copy");
-		}
+		};
 		service.focus();
-	}
-}
+	};
+};
 // form processing
 jop.addEventListener("submit", generatePassword);
 function generatePassword(event) {
@@ -176,9 +180,9 @@ function generatePassword(event) {
 	service.value = service.value.trim();
 	secret.value = secret.value.trim();
 	if (!service.value || service.validity.tooShort || service.validity.patternMismatch) {
-		service.focus()
+		service.focus();
 	} else if (!secret.value || secret.validity.tooShort) {
-		secret.focus()
+		secret.focus();
 	} else {
 		let salt = service.value.trim();
 		const master = secret.value.trim();
@@ -187,7 +191,7 @@ function generatePassword(event) {
 			secret.style.WebkitTextSecurity = "square";
 		} else {
 			secret.style.textDecorationLine = "line-through";
-		}
+		};
 		// defaults values
 		let rank = "1";
 		let symbol = true;
@@ -197,7 +201,7 @@ function generatePassword(event) {
 			salt = flag.at(-1).trim();
 			rank = flag.at(-2) || "1";
 			symbol = flag.at(-3) !== "-" ? true : false;
-		}
+		};
 		// generate password
 		generatePasswordFromPBKDF2(master, (salt + "#" + rank), symbol);
 		// timer set-up
@@ -210,15 +214,15 @@ function generatePassword(event) {
 		}, 30000);
 		// save list of services
 		if (!providers.includes(service.value)) {
-			providers.push(service.value)
+			providers.push(service.value);
 			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
 			} catch { true; }
 		}
 		service.focus();
-	}
-}
+	};
+};
 // pbkdf2 webcrypto browser ---------------------------------------------------
 async function generatePasswordFromPBKDF2(master, salt, symbol) {
 	const encode = new TextEncoder();
@@ -226,10 +230,10 @@ async function generatePasswordFromPBKDF2(master, salt, symbol) {
 	const derivedBits = await window.crypto.subtle.deriveBits({name: "pbkdf2", salt: encode.encode(salt), iterations: 1e4, hash: "sha-256"}, importedKey, 256);
 	const arrayDerivedBits = new Uint8Array(derivedBits, 0, 32);
 	password.value = _render_password(toHex(arrayDerivedBits), 16, symbol);
-}
+};
 const toHex = function(byteArray) {
 	return Array.from(byteArray, byte => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join('');
-}
+};
 // lesspass from python -------------------------------------------------------
 // https://github.com/lesspass/lesspass/blob/8.0.2/cli/lesspass/password.py
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -239,7 +243,7 @@ const symbols = "(.,;:!?)[=+-*/&|]{#$%@_~}";
 function _get_set_of_characters(symbol) {
 	const characters = lowercase + digits + uppercase + (symbol && symbols || "");
 	return characters;
-}
+};
 function _consume_entropy(password, entropy, length, characters) {
 	if (password.length >= length) return [password, entropy];
 	const byte = parseInt(entropy.slice(-2), 16);
@@ -248,7 +252,7 @@ function _consume_entropy(password, entropy, length, characters) {
 		password += characters[byte % characters.length],
 		_consume_entropy(password, entropy, length, characters)
 	);
-}
+};
 function _insert_characters_pseudo_randomly(password, entropy, sample) {
 	for (index in sample) {
 		var byte = parseInt(entropy.slice(-2), 16);
@@ -256,7 +260,7 @@ function _insert_characters_pseudo_randomly(password, entropy, sample) {
 		password = password.slice(0, length) + sample[index] + password.slice(length), entropy = entropy.slice(0, -1);
 	};
 	return password;
-}
+};
 function _get_one_character_per_set(entropy, symbol) {
 	var sample = "";
 	var [character, entropy] = _consume_entropy("", entropy, 1, lowercase);
@@ -272,14 +276,14 @@ function _get_one_character_per_set(entropy, symbol) {
 		),
 		[sample, entropy]
 	);
-}
+};
 function _render_password(entropy, length, symbol) {
 	const characters = _get_set_of_characters(symbol);
 	length -= symbol ? 4 : 3;
 	var [password, entropy] = _consume_entropy("", entropy, length, characters);
 	var [sample, entropy] = _get_one_character_per_set(entropy, symbol);
 	return _insert_characters_pseudo_randomly(password, entropy, sample);
-}
+};
 </script>
 </body>
 </html>
