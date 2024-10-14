@@ -116,10 +116,12 @@ if (navigator.language) {
 }
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
-var providers = [] || JSON.parse(window.localStorage.getItem("services"));
-providers.forEach(
-	service => services.innerHTML += ('<option value="' + service + '"/>')
-);
+var providers = JSON.parse(window.localStorage.getItem("services"));
+try {
+	providers.forEach(
+		service => services.innerHTML += ('<option value="' + service + '"/>')
+	);
+} catch { providers = []; }
 // events ---------------------------------------------------------------------
 var displayTimer;
 // timer reset if changes
