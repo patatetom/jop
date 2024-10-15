@@ -213,15 +213,26 @@ clear.addEventListener("click", function() {
 	service.value = "";
 	service.focus();
 });
-show.addEventListener("click", function() {
+show.addEventListener("mousedown", function() {
 	if (secret.value) {
 		if (CSS.supports("-webkit-text-security", "square")) {
-			secret.style.WebkitTextSecurity = secret.style.WebkitTextSecurity == "unset" ? "square" : "unset";
+			secret.style.WebkitTextSecurity = "unset";
 		} else {
-			secret.style.textDecorationLine = secret.style.textDecorationLine == "none" ? "line-through" : "none";
+			secret.style.textDecorationLine = "none";
 		};
 	};
-	secret.focus();
+});
+show.addEventListener("mouseup", function() {
+	if (secret.value) {
+		if (CSS.supports("-webkit-text-security", "square")) {
+			secret.style.WebkitTextSecurity = "square";
+		} else {
+			secret.style.textDecorationLine = "line-through";
+		};
+		secret.focus();
+	} else {
+		service.focus();
+	}
 });
 copy.addEventListener("click", copyPassword);
 async function copyPassword() {
@@ -247,11 +258,6 @@ function generatePassword(event) {
 	} else {
 		let salt = service.value.trim();
 		const master = secret.value.trim();
-		if (CSS.supports("-webkit-text-security", "square")) {
-			secret.style.WebkitTextSecurity = "square";
-		} else {
-			secret.style.textDecorationLine = "line-through";
-		};
 		let rank = "1";
 		let symbol = true;
 		const flag = salt.match(/^(\+|-)?([1-9]?) +(.{3,})/);
