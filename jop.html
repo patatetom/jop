@@ -107,24 +107,8 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2
 script ------------------------------------------------------------------------
 -->
 <script>
-// import services provided by URL --------------------------------------------
-const url = new URL(location);
-if (url.search) {
-	let providers = url.searchParams.get("services");
-	if (providers) {
-		try {
-			providers = JSON.parse(providers);
-		} catch {
-			providers = [];
-		};
-		// concatenation and uniqueness before saving
-		providers = [...new Set(getProviders().concat(providers))];
-		localStorage.setItem("services", JSON.stringify(providers));
-	};
-	// reload jop without parameter
-	location.replace(url.origin.replace(/^null$/, "") + url.pathname);
-};
 // language (use fr function as template to create a new language) ------------
+var reset = "WARNING: Delete service list ?";
 if (navigator.language) {
 	const language = navigator.language.split("-")[0];
 	if (language && language !== "en") {
@@ -145,6 +129,27 @@ function fr() {
 	copy.title = "Copier le mot de passe vers le presse-papiers";
 	generate.value = "Générer »";
 	password.placeholder = "Mot de passe";
+	reset = "ATTENTION: Effacer la liste des services ?";
+};
+// import/reset services ------------------------------------------------------
+const url = new URL(location);
+if (url.search) {
+	if (url.search === "?resetServices") {
+		confirm(reset) && localStorage.removeItem("services");
+		location.replace(url.origin.replace(/^null$/, "") + url.pathname);
+	} else {
+		let providers = url.searchParams.get("services");
+		if (providers) {
+			try {
+				providers = JSON.parse(providers);
+			} catch {
+				providers = [];
+			};
+			providers = [...new Set(getProviders().concat(providers))];
+			localStorage.setItem("services", JSON.stringify(providers));
+		};
+		location.replace(url.origin.replace(/^null$/, "") + url.pathname);
+	};
 };
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
