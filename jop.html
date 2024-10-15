@@ -122,7 +122,7 @@ if (url.search) {
 		localStorage.setItem("services", JSON.stringify(providers));
 	};
 	// reload jop without parameter
-	location.replace(url.protocol + "//" + url.pathname);
+	location.replace(url.origin.replace(/^null$/, "") + url.pathname);
 };
 // language (use fr function as template to create a new language) ------------
 if (navigator.language) {
