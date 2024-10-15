@@ -82,7 +82,7 @@ body --------------------------------------------------------------------------
 	<table><tr><td>
 		<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus />
 	</td>	<td>
-		<img id="send" title="Export services" src="data:image/svg+xml;base64,	
+		<img id="send" title="Export service list" src="data:image/svg+xml;base64,	
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItc2VuZCI+PGxpbmUgeDE9IjIyIiB5MT0iMiIgeDI9IjExIiB5Mj0iMTMiPjwvbGluZT48cG9seWdvbiBwb2ludHM9IjIyIDIgMTUgMjIgMTEgMTMgMiA5IDIyIDIiPjwvcG9seWdvbj48L3N2Zz4=" />
 	</td></tr><tr><td>
 		<input id="secret" required type="text" minlength="3" placeholder="Secret" />
@@ -123,7 +123,7 @@ if (navigator.language) {
 function fr() {
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
-	send.title = "Exporter les services";
+	send.title = "Exporter la liste des services";
 	show.title = "Afficher/masquer le secret";
 	clear.title = "Nettoyer le formulaire";
 	copy.title = "Copier le mot de passe vers le presse-papiers";
@@ -135,7 +135,13 @@ function fr() {
 const url = new URL(location);
 if (url.search) {
 	if (url.search === "?resetServices") {
-		confirm(reset) && localStorage.removeItem("services");
+		if (confirm(reset)) {
+			try {
+				localStorage.removeItem("services");
+			} catch {
+				true;
+			};
+		};
 		location.replace(url.origin.replace(/^null$/, "") + url.pathname);
 	} else {
 		let providers = url.searchParams.get("services");
