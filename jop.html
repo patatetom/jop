@@ -82,7 +82,7 @@ body --------------------------------------------------------------------------
 	<table><tr><td>
 		<input id="service" required type="text" minlength="2" placeholder="Service" list="services" autofocus />
 	</td>	<td>
-		<img id="export" title="Export services" src="data:image/svg+xml;base64,	
+		<img id="send" title="Export services" src="data:image/svg+xml;base64,	
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItc2VuZCI+PGxpbmUgeDE9IjIyIiB5MT0iMiIgeDI9IjExIiB5Mj0iMTMiPjwvbGluZT48cG9seWdvbiBwb2ludHM9IjIyIDIgMTUgMjIgMTEgMTMgMiA5IDIyIDIiPjwvcG9seWdvbj48L3N2Zz4=" />
 	</td></tr><tr><td>
 		<input id="secret" required type="text" minlength="3" placeholder="Secret" />
@@ -107,6 +107,25 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2
 script ------------------------------------------------------------------------
 -->
 <script>
+// import services provided by URL --------------------------------------------
+const url = new URL(location);
+if (url.search) {
+	let providers = url.searchParams.get("services");
+	if (providers) {
+		try {
+			providers = JSON.parse(providers);
+		} catch {
+			providers = [];
+		};
+		providers = [...new Set(
+			JSON.parse(
+				localStorage.getItem("services") || "[]"
+			).concat(providers)
+		)];
+		localStorage.setItem("services", providers);
+	};
+	location.replace(url.protocol + "//" + url.pathname);
+};
 // language (use fr template to create a new language) ------------------------
 // french
 function fr() {
@@ -130,7 +149,6 @@ if (navigator.language) {
 	};
 };
 // services -------------------------------------------------------------------
-// TODO: import services from URL (eg. .../jop.html?services=["test","retest"])
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
 var providers;
 try {
@@ -156,6 +174,21 @@ secret.addEventListener("input", function() {
 	password.value = "";
 	clearTimeout(displayTimer);
 });
+// export providers/services
+send.addEventListener("click", exportServices);
+async function exportServices() {
+	if (providers) {
+		const search = "?services=" + JSON.stringify(providers);
+		try {
+			await navigator.clipboard.writeText(search);
+		} catch {
+			let tmp = document.createElement("input");
+			tmp.value = search; tmp.select();
+			document.execCommand("copy");
+		};
+	};
+	service.focus();
+};
 // clear form
 clear.addEventListener("click", function() {
 	password.value = "";
