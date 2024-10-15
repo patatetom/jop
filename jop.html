@@ -213,7 +213,7 @@ clear.addEventListener("click", function() {
 	service.value = "";
 	service.focus();
 });
-show.addEventListener("mousedown", function() {
+show.addEventListener("pointerdown", function() {
 	if (secret.value) {
 		if (CSS.supports("-webkit-text-security", "square")) {
 			secret.style.WebkitTextSecurity = "unset";
@@ -222,7 +222,7 @@ show.addEventListener("mousedown", function() {
 		};
 	};
 });
-show.addEventListener("mouseup", function() {
+show.addEventListener("pointerup", function() {
 	if (secret.value) {
 		if (CSS.supports("-webkit-text-security", "square")) {
 			secret.style.WebkitTextSecurity = "square";
