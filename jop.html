@@ -117,13 +117,11 @@ if (url.search) {
 		} catch {
 			providers = [];
 		};
-		providers = [...new Set(
-			JSON.parse(
-				localStorage.getItem("services") || "[]"
-			).concat(providers)
-		)];
-		localStorage.setItem("services", providers);
+		// concatenation and uniqueness before saving
+		providers = [...new Set(getProviders().concat(providers))];
+		localStorage.setItem("services", JSON.stringify(providers));
 	};
+	// reload jop without parameter
 	location.replace(url.protocol + "//" + url.pathname);
 };
 // language (use fr template to create a new language) ------------------------
@@ -131,6 +129,7 @@ if (url.search) {
 function fr() {
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
+	send.title = "Exporter les services";
 	clear.title = "Nettoyer le formulaire";
 	show.title = "Afficher/masquer le secret";
 	copy.title = "Copier le mot de passe vers le presse-papiers";
@@ -150,19 +149,19 @@ if (navigator.language) {
 };
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
-var providers;
-try {
-	providers = JSON.parse(window.localStorage.getItem("services"));
-} catch {
-	providers = [];
+// helper
+function getProviders() {
+	let providers;
+	try {
+		providers = JSON.parse(window.localStorage.getItem("services") || "[]");
+	} catch {
+		providers = [];
+	};
+	return providers;
 };
-try {
-	providers.forEach(
-		service => services.innerHTML += ('<option value="' + service + '"/>')
-	);
-} catch {
-	providers = [];
-};
+getProviders().forEach(
+	service => services.innerHTML += ('<option value="' + service + '"/>')
+);
 // events ---------------------------------------------------------------------
 var displayTimer;
 // timer reset if changes
@@ -177,13 +176,14 @@ secret.addEventListener("input", function() {
 // export providers/services
 send.addEventListener("click", exportServices);
 async function exportServices() {
+	let providers = getProviders();
 	if (providers) {
 		const search = "?services=" + JSON.stringify(providers);
 		try {
 			await navigator.clipboard.writeText(search);
 		} catch {
-			let tmp = document.createElement("input");
-			tmp.value = search; tmp.select();
+			let dummy = document.createElement("input");
+			dummy.value = search; dummy.select();
 			document.execCommand("copy");
 		};
 	};
@@ -260,8 +260,10 @@ function generatePassword(event) {
 			secret.style.textDecorationLine = "none";
 		}, 30000);
 		// save list of services
+		let providers = getProviders();
 		if (!providers.includes(service.value)) {
 			providers.push(service.value);
+			// update input list before saving
 			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
