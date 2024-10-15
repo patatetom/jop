@@ -119,8 +119,7 @@ if (navigator.language) {
 		};
 	};
 };
-// french
-function fr() {
+function fr() { // french
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
 	send.title = "Exporter la liste des services";
@@ -159,7 +158,6 @@ if (url.search) {
 };
 // services -------------------------------------------------------------------
 service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
-// helper
 function getProviders() {
 	let providers;
 	try {
@@ -169,7 +167,6 @@ function getProviders() {
 	};
 	return providers;
 };
-// build input list
 getProviders().forEach(
 	service => services.innerHTML += ('<option value="' + service + '"/>')
 );
@@ -177,7 +174,6 @@ getProviders().forEach(
 var displayTimer;
 const okImage = "data:image/svg+xml;base64,\
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hlY2stY2lyY2xlIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My05LjE0Ij48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==";
-// helper
 function okNotify(image, event, listener) {
 	image.removeEventListener(event, listener);
 	let src = image.src;
@@ -187,7 +183,6 @@ function okNotify(image, event, listener) {
 		image.addEventListener(event, listener);
 	}, 1000);
 }
-// timer reset if changes
 service.addEventListener("input", function() {
 	password.value = "";
 	clearTimeout(displayTimer);
@@ -196,7 +191,6 @@ secret.addEventListener("input", function() {
 	password.value = "";
 	clearTimeout(displayTimer);
 });
-// export providers/services
 send.addEventListener("click", exportServices);
 async function exportServices() {
 	let providers = getProviders();
@@ -213,14 +207,12 @@ async function exportServices() {
 	};
 	service.focus();
 };
-// clear form
 clear.addEventListener("click", function() {
 	password.value = "";
 	secret.value = "";
 	service.value = "";
 	service.focus();
 });
-// display/hide secret
 show.addEventListener("click", function() {
 	if (secret.value) {
 		if (CSS.supports("-webkit-text-security", "square")) {
@@ -231,7 +223,6 @@ show.addEventListener("click", function() {
 	};
 	secret.focus();
 });
-// copy password to clipboard
 copy.addEventListener("click", copyPassword);
 async function copyPassword() {
 	if (secret.value) {
@@ -244,7 +235,6 @@ async function copyPassword() {
 		};
 	};
 };
-// form processing
 jop.addEventListener("submit", generatePassword);
 function generatePassword(event) {
 	event.preventDefault();
@@ -257,37 +247,29 @@ function generatePassword(event) {
 	} else {
 		let salt = service.value.trim();
 		const master = secret.value.trim();
-		// hide secret
 		if (CSS.supports("-webkit-text-security", "square")) {
 			secret.style.WebkitTextSecurity = "square";
 		} else {
 			secret.style.textDecorationLine = "line-through";
 		};
-		// defaults values
 		let rank = "1";
 		let symbol = true;
-		// symbol and rank from flag if supplied
 		const flag = salt.match(/^(\+|-)?([1-9]?) +(.{3,})/);
 		if (flag) {
 			salt = flag.at(-1).trim();
 			rank = flag.at(-2) || "1";
 			symbol = flag.at(-3) !== "-" ? true : false;
 		};
-		// generate password
 		generatePasswordFromPBKDF2(master, (salt + "#" + rank), symbol);
-		// timer set-up
 		clearTimeout(displayTimer);
 		displayTimer = setTimeout(function(){
-			// programmed deletion of secret and password
 			secret.value = "";
 			password.value = "";
 			secret.style.textDecorationLine = "none";
 		}, 30000);
-		// save list of services
 		let providers = getProviders();
 		if (!providers.includes(service.value)) {
 			providers.push(service.value);
-			// update input list before saving
 			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
