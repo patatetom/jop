@@ -183,6 +183,13 @@ function okNotify(image, event, listener) {
 		image.addEventListener(event, listener);
 	}, 1000);
 }
+function hideSecret() {
+	if (CSS.supports("-webkit-text-security", "square")) {
+		secret.style.WebkitTextSecurity = "square";
+	} else {
+		secret.style.textDecorationLine = "line-through";
+	};
+};
 service.addEventListener("input", function() {
 	password.value = "";
 	clearTimeout(displayTimer);
@@ -213,26 +220,16 @@ clear.addEventListener("click", function() {
 	service.value = "";
 	service.focus();
 });
-show.addEventListener("pointerdown", function() {
+show.addEventListener("click", function() {
 	if (secret.value) {
 		if (CSS.supports("-webkit-text-security", "square")) {
-			secret.style.WebkitTextSecurity = "unset";
+			secret.style.WebkitTextSecurity = secret.style.WebkitTextSecurity == "unset" ? "square" : "unset";
 		} else {
-			secret.style.textDecorationLine = "none";
+			secret.style.textDecorationLine = secret.style.textDecorationLine == "none" ? "line-through" : "none";
 		};
+		setTimeout(hideSecret, 5000);
 	};
-});
-show.addEventListener("pointerup", function() {
-	if (secret.value) {
-		if (CSS.supports("-webkit-text-security", "square")) {
-			secret.style.WebkitTextSecurity = "square";
-		} else {
-			secret.style.textDecorationLine = "line-through";
-		};
-		secret.focus();
-	} else {
-		service.focus();
-	}
+	secret.focus();
 });
 copy.addEventListener("click", copyPassword);
 async function copyPassword() {
@@ -256,6 +253,7 @@ function generatePassword(event) {
 	} else if (!secret.value || secret.validity.tooShort) {
 		secret.focus();
 	} else {
+		hideSecret();
 		let salt = service.value.trim();
 		const master = secret.value.trim();
 		let rank = "1";
