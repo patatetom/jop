@@ -61,11 +61,14 @@ No complexity is required for the secret, which must be at least 3 characters lo
 <img alt="JOP on computer" src="jop.computer.png" width="310px"/>
 
 
-### Smartphone
+### Smartphone / Tablet
+
+> _Direct use of the `file` schema (eg. `file:///path/to/jop.html`) in the URL is made difficult on smartphone/tablet : it is therefore necessary to install a web server on the smartphone/tablet to use JOP in offline mode._
+> <br/>
+> _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself (prefered), or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._
+
 
 #### Android
-
-> _Direct use of the `file` schema (eg. `file:///sdcard/path/to/jop.html`) in the URL is made difficult by Android : it is therefore simpler to install a small web server._
 
 - Install [Simple HTTP Server](https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
 - Set an empty folder as the `Root folder`
@@ -81,7 +84,6 @@ No complexity is required for the secret, which must be at least 3 characters lo
 #### iOS
 
 > _TODO…_<br/>
-> _iOS behaves like Android (`file:` scheme), so :_<br/>
 >  &nbsp;- _see [WorldWideWeb](https://apps.apple.com/fr/app/worldwideweb-mobile/id1623006812)_<br/>
 >  &nbsp;- _see [iSH/Python](https://beebom.com/run-simple-web-server-iphone/)_<br/>
 > _no iOS system yet : help would be appreciated._
