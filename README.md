@@ -81,7 +81,12 @@ No complexity is required for the secret, which must be at least 3 characters lo
 #### iOS
 
 > _TODO…_<br/>
+> _see [WorldWideWeb](https://apps.apple.com/fr/app/worldwideweb-mobile/id1623006812) if iOS behaves like Android (`file:` scheme)_<br/>
 > _no iOS system yet : help would be appreciated._
+
+
+
+## Usage
 
 
 
