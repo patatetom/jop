@@ -96,6 +96,8 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ## Translation
 
+> _Your translation is welcome ;-)_
+
 - Open the HTML file with your favorite code editor
 - In the `language` section of the `script` section, copy/paste or rename the existing `fr(){…}` function
 - Rename the new function with the two letters of the desired language
@@ -104,17 +106,14 @@ No complexity is required for the secret, which must be at least 3 characters lo
 - Reload the HTML file from your favorite browser
 
 ```js
-// language (use fr template to create a new language) ------------------------
-// french
-function fr() {
+// language -------------------------------------------------------------------
+// (use fr function as template to create a new language)
+function fr() { //french
 	document.documentElement.lang = "fr";
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
 	…}
-// deutsch
-function de() {
+function de() { // deutsch
 	document.documentElement.lang = "de";
 	document.head.querySelector('meta[name="description"]').content = "Passwortgenerator";
 	…}
 ```
-
-> _Your translation is welcome ;-)_
