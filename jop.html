@@ -232,6 +232,7 @@ clear.addEventListener("click", function() {
 	secret.value = "";
 	service.value = "";
 	clearTimeout(secretTimer);
+	clearTimeout(displayTimer);
 	service.focus();
 });
 show.addEventListener("click", function() {
@@ -248,7 +249,7 @@ show.addEventListener("click", function() {
 });
 copy.addEventListener("click", copyPassword);
 async function copyPassword() {
-	if (secret.value) {
+	if (password.value) {
 		okNotify(copy, "click", copyPassword);
 		try {
 			await navigator.clipboard.writeText(password.value);
@@ -256,6 +257,7 @@ async function copyPassword() {
 			password.select();
 			document.execCommand("copy");
 		};
+		clear.click();
 	};
 };
 jop.addEventListener("submit", generatePassword);
