@@ -92,6 +92,14 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ## Usage
 
+### Password generation
+
+Using JOP is relatively simple : enter the service (possibly prefixed), enter the secret, trigger password generation and then copy to the clipboard (for a later pasting) the generated password.
+
+**It is important to note that the password copied to the clipboard is freely accessible.**
+
+> For confidentiality, the informations entered are erased when the generated password is copied to the clipboard, the secret is hidden after 5 seconds of observation and the secret is automatically erased after 30 seconds of inactivity.
+
 
 
 ## Translation
