@@ -8,7 +8,7 @@ _Managing a multitude of unique, long and complex passwords has never been easy,
 
 
 
-## Password generation
+## Password composition
 
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
@@ -99,6 +99,9 @@ Using JOP is relatively simple : enter the service (possibly prefixed), enter th
 **It is important to note that the password copied to the clipboard is freely accessible.**
 
 > For confidentiality, the informations entered are erased when the generated password is copied to the clipboard, the secret is hidden after 5 seconds of observation and the secret is automatically erased after 30 seconds of inactivity.
+
+
+### Exporting, importing and cleaning services
 
 
 
