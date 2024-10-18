@@ -103,6 +103,18 @@ Using JOP is relatively simple : enter the service (possibly prefixed), enter th
 
 ### Exporting, importing and cleaning services
 
+Services memorized by the browser can be exported from the JOP interface using the dedicated icon : exporting involves copying a character string (eg. `?services=["myservice","-2 otherservice"]` for example) to the clipboard, which will then be used for an importation.
+
+> _This character string can easily be edited (corrected, expanded, etc...) using a simple text editor (such as `notepad` for example) before being transmitted for import._
+
+Services can be imported into JOP by adding to the URL used the string previously exported from another instance of JOP : services present there will be incorporated into the existing list of services memorized by the browser.
+
+> _`file:///path/to/jop.html?services=["myservice","-2 otherservice"]` will import `myservice` and `-2 otherservice` services into the existing list._
+
+Services memorized by the browser can be deleted by adding `?resetServices` to the URL used (e.g. `file:///path/to/jop.html?resetServices`) : confirmation will be requested before deletion.
+
+> _The list of stored services can easily be « cleaned » by exporting the list, correcting the exportation, resetting the list and importing the corrected exportation._
+
 
 
 ## Translation
