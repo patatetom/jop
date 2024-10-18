@@ -172,6 +172,7 @@ getProviders().forEach(
 	service => services.innerHTML += ('<option value="' + service + '"/>')
 );
 // events ---------------------------------------------------------------------
+var secretTimer;
 var displayTimer;
 const okImage = "data:image/svg+xml;base64,\
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXItY2hlY2stY2lyY2xlIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My05LjE0Ij48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==";
@@ -191,12 +192,23 @@ function hideSecret() {
 		secret.style.textDecorationLine = "line-through";
 	};
 };
+function restartSecretTimer() {
+	clearTimeout(secretTimer);
+	if (secret.value) {
+		secretTimer = setTimeout(function(){
+			secret.value = "";
+			secret.style.textDecorationLine = "none";
+		}, 30000);
+	};
+};
 service.addEventListener("input", function() {
 	password.value = "";
+	restartSecretTimer();
 	clearTimeout(displayTimer);
 });
 secret.addEventListener("input", function() {
 	password.value = "";
+	restartSecretTimer();
 	clearTimeout(displayTimer);
 });
 send.addEventListener("click", exportServices);
@@ -219,6 +231,7 @@ clear.addEventListener("click", function() {
 	password.value = "";
 	secret.value = "";
 	service.value = "";
+	clearTimeout(secretTimer);
 	service.focus();
 });
 show.addEventListener("click", function() {
@@ -230,6 +243,7 @@ show.addEventListener("click", function() {
 		};
 		setTimeout(hideSecret, 5000);
 	};
+	restartSecretTimer();
 	secret.focus();
 });
 copy.addEventListener("click", copyPassword);
@@ -247,6 +261,7 @@ async function copyPassword() {
 jop.addEventListener("submit", generatePassword);
 function generatePassword(event) {
 	event.preventDefault();
+	restartSecretTimer();
 	service.value = service.value.trim();
 	secret.value = secret.value.trim();
 	if (!service.value || service.validity.tooShort || service.validity.patternMismatch) {
