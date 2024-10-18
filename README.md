@@ -54,7 +54,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ### Computer
 
-- [Download](jop.html?raw=true) raw `jop.html` HTML file to your computer
+- [Download](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) raw `jop.html` HTML file to your computer
 - Check the code
 - Create a desktop shortcut that opens your favorite browser to the HTML file (the URL will look like `file:///home/me/path/to/jop.html`)
 
@@ -74,7 +74,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 - Set an empty folder as the `Root folder`
 - Restrict network interfaces to `lo` (eg. `127.0.0.1`)
 - Set `Autostart at boot`
-- [Download](jop.html?raw=true) raw `jop.html` HTML file to the empty folder defined as `Root folder`
+- [Download](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) raw `jop.html` HTML file to the empty folder defined as `Root folder`
 - Check the code
 - Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/jop.html` URL
 
