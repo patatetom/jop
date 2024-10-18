@@ -1,6 +1,6 @@
 # JOP***_
 
-**In browser password regenerator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
+**In browser password generator** inspired by _« [lesspass](https://github.com/lesspass/lesspass), a stateless password manager »_.
 
 **JOP** - **J**ust **O**ne **P**assword - is an extremely simple offline solution based on a small HTML-CSS-JS file played in a recent web browser.
 
