@@ -14,6 +14,8 @@ The service and the secret provided are combined and mixed using the PBKDF2 cryp
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
 
 > _Some services do not allow the use of special characters in password : the service prefix `-` prevents their use._
+> <br/>
+> _Some services require regular password changes : the service prefix allows you to select a password from a list of nine candidates._
 
 
 
@@ -86,8 +88,8 @@ No complexity is required for the secret, which must be at least 3 characters lo
 #### iOS
 
 - Install [a-Shell-mini](https://apps.apple.com/us/app/a-shell-mini/id1543537943)
-- Start a-Shell-mini and run `echo python -m http.server -b 127.0.0.1 > .profile`
-- Restart a-Shell-mini
+- Start a-Shell-mini and run `echo python -m http.server -b 127.0.0.1 > .profile` command
+- Stop (eg. `exit` command) and restart a-Shell-mini
 - [Download](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) raw `jop.html` HTML file
 - Move `jop.html` to a-Shell-mini folder
 - Check the code
