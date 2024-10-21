@@ -85,10 +85,17 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 #### iOS
 
-> _TODO…_<br/>
->  &nbsp;- _see [WorldWideWeb](https://apps.apple.com/fr/app/worldwideweb-mobile/id1623006812)_<br/>
->  &nbsp;- _see [iSH/Python](https://beebom.com/run-simple-web-server-iphone/)_<br/>
-> _no iOS system yet : help would be appreciated._
+- Install [a-Shell-mini](https://apps.apple.com/us/app/a-shell-mini/id1543537943)
+- Start a-Shell-mini and run `echo python -m http.server -b 127.0.0.1 > .profile`
+- Restart a-Shell-mini
+- [Download](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) raw `jop.html` HTML file
+- Move `jop.html` to a-Shell-mini folder
+- Check the code
+- Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8000/jop.html` URL
+
+> _a-Shell-mini will have to be restarted if JOP cannot be loaded/reloaded._
+> <br/>
+> _The downloaded HTML file may have been saved with the extension `.txt` (eg.`jop.html.txt`) : in this case, and after being moved, the file can easily be renamed from within a-Shell-mini with the command `mv jop.html.txt jop.html`._
 
 
 
