@@ -13,8 +13,7 @@ _Managing a multitude of unique, long and complex passwords has never been easy,
 The service and the secret provided are combined and mixed using the PBKDF2 cryptographic function to produce a very large number.
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
 
-> _Some services do not allow the use of special characters in password : the service prefix `-` prevents their use._
-> <br/>
+> _Some services do not allow the use of special characters in password : the service prefix `-` prevents their use._<br/>
 > _Some services require regular password changes : the service prefix allows you to select a password from a list of nine candidates._
 
 
@@ -65,11 +64,9 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 ### Smartphone / Tablet
 
-> _Direct use of the `file` schema (eg. `file:///path/to/jop.html`) in the URL is made difficult on smartphone/tablet : it is therefore necessary to install a web server on the smartphone/tablet to use JOP in offline mode._
-> <br/>
-> _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself (prefered), or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._
-> <br/>
-> _If you prefer to use JOP online, it must be served via HTTPS._
+> _Direct use of the `file` schema (eg. `file:///path/to/jop.html`) in the URL is made difficult on smartphone/tablet : it is therefore necessary to install a web server on the smartphone/tablet to use JOP in offline mode._<br/>
+> _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself (prefered), or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._<br/>
+> _If you choose to use JOP online, it must be served via HTTPS and not HTTP._
 
 
 #### Android
@@ -97,8 +94,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 <img alt="a-Shell-mini on iOS" src="pythonHTTPserver.ios.png" height="390px"/> <img alt="JOP on iOS" src="jop.ios.png" height="390px"/>
 
-> _a-Shell-mini will have to be restarted if JOP cannot be loaded/reloaded._
-> <br/>
+> _a-Shell-mini will have to be restarted if JOP cannot be loaded/reloaded._<br/>
 > _The downloaded HTML file may have been saved with the extension `.txt` (eg.`jop.html.txt`) : in this case, and after being moved, the file can easily be renamed from within a-Shell-mini with the command `mv jop.html.txt jop.html`._
 
 
