@@ -66,6 +66,8 @@ No complexity is required for the secret, which must be at least 3 characters lo
 > _Direct use of the `file` schema (eg. `file:///path/to/jop.html`) in the URL is made difficult on smartphone/tablet : it is therefore necessary to install a web server on the smartphone/tablet to use JOP in offline mode._
 > <br/>
 > _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself (prefered), or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._
+> <br/>
+> _If you prefer to use JOP online, it must be served via HTTPS._
 
 
 #### Android
