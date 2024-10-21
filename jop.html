@@ -147,7 +147,7 @@ if (url.search) {
 		let providers = url.searchParams.get("services");
 		if (providers) {
 			try {
-				providers = JSON.parse(providers);
+				providers = JSON.parse(decodeURI(providers));
 			} catch {
 				providers = [];
 			};
