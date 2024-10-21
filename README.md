@@ -93,6 +93,8 @@ No complexity is required for the secret, which must be at least 3 characters lo
 - Check the code
 - Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8000/jop.html` URL
 
+<img alt="a-Shell-mini on iOS" src="pythonHTTPserver.ios.png" height="390px"/> <img alt="JOP on iOS" src="jop.ios.png" height="390px"/>
+
 > _a-Shell-mini will have to be restarted if JOP cannot be loaded/reloaded._
 > <br/>
 > _The downloaded HTML file may have been saved with the extension `.txt` (eg.`jop.html.txt`) : in this case, and after being moved, the file can easily be renamed from within a-Shell-mini with the command `mv jop.html.txt jop.html`._
