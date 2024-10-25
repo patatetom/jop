@@ -99,7 +99,7 @@ Aucune complexité n'est requise pour le secret, qui doit être composé d'au mo
 <img alt="a-Shell-mini sur iOS" src="pythonHTTPserver.ios.png" height="390px"/> <img alt="JOP sur iOS" src="jop.ios.png" height="390px"/>
 
 > _a-Shell-mini devra être redémarré si JOP ne peut pas être chargé/rechargé._<br/>
-> _Le fichier HTML téléchargé peut avoir été sauvegardé avec l'extension `.txt` (eg. `jop.html.txt`) : dans ce cas, et après l'avoir déplacé, le fichier peut facilement être renommé depuis a-Shell-mini avec la commande `mv jop.html.txt jop.html`
+> _Le fichier HTML téléchargé peut avoir été sauvegardé avec l'extension `.txt` (eg. `jop.html.txt`) : dans ce cas, et après l'avoir déplacé, le fichier peut facilement être renommé depuis a-Shell-mini avec la commande `mv jop.html.txt jop.html`._
 
 
 
