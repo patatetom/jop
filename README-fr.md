@@ -75,7 +75,7 @@ Aucune complexité n'est requise pour le secret, qui doit être composé d'au mo
 
 #### Android
 
-- Installer [Simple HTTP Server] (https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
+- Installer [Simple HTTP Server](https://play.google.com/store/apps/details?id=com.phlox.simpleserver)
 - Définir un dossier vide comme `Root folder` (dossier racine)
 - Restreindre les interfaces réseau à `lo` (eg. `127.0.0.1`)
 - Définir `Autostart at boot` (démarrage automatique du serveur au démarrage du système)
@@ -88,7 +88,7 @@ Aucune complexité n'est requise pour le secret, qui doit être composé d'au mo
 
 #### iOS
 
-- Installer [a-Shell-mini] (https://apps.apple.com/us/app/a-shell-mini/id1543537943)
+- Installer [a-Shell-mini](https://apps.apple.com/us/app/a-shell-mini/id1543537943)
 - Démarrez a-Shell-mini et exécutez la commande `echo python -m http.server -b 127.0.0.1 > .profile`
 - Arrêtez (eg. commande `exit`) et redémarrez a-Shell-mini
 - [Télécharger](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) le fichier HTML `jop.html`
