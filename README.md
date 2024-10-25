@@ -47,6 +47,7 @@ A few commented examples of prefixed services are sometimes better than a long s
 Secret is one of the two pieces of information to be provided and therefore retained.
 No complexity is required for the secret, which must be at least 3 characters long.
 
+> [!TIP]
 > _However, it is preferable to use a robust secret._
 
 
