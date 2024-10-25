@@ -47,6 +47,7 @@ Quelques exemples commentés de services préfixés valent parfois mieux qu'un l
 Le secret est l'une des deux informations à fournir et donc à mémoriser.
 Aucune complexité n'est requise pour le secret, qui doit être composé d'au moins 3 caractères.
 
+> [!TIP]
 > _Cependant, il est préférable d'utiliser un secret robuste._
 
 
