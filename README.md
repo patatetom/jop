@@ -14,7 +14,7 @@ The service and the secret provided are combined and mixed using the PBKDF2 cryp
 This number is then used to select characters from a set set of 26 lower-case letters of the Latin alphabet (`abcdefghijklmnopqrstuvwxyz`), the 26 upper-case letters of the Latin alphabet (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`), the 10 Arabic-Indian numerals (`0123456789`) and 25 special characters (`(.,;:!?)[=+-*/&|]{#$%@_~}`).
 
 > _Some services do not allow the use of special characters in password : the service prefix `-` prevents their use._<br/>
-> _Some services require regular password changes : the service prefix allows you to select a password from a list of nine candidates._
+> _Some services require regular password change : the service prefix allows you to select a password from a list of nine candidates._
 
 
 
@@ -66,7 +66,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 
 > [!NOTE]
 > _Direct use of the `file` schema (eg. `file:///path/to/jop.html`) in the URL is made difficult on smartphone/tablet : it is therefore necessary to install a web server on the smartphone/tablet to use JOP in offline mode._<br/>
-> _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself (prefered), or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._<br/>
+> _If you don't want to install a web server on your smartphone/tablet, you need to use an online version of JOP, either by hosting the HTML file yourself, or by using the [version provided by GitHub](https://patatetom.github.io/jop/jop.html)._<br/>
 > _If you choose to use JOP online, it must be served via HTTPS and not HTTP._
 
 
@@ -82,7 +82,7 @@ No complexity is required for the secret, which must be at least 3 characters lo
 - Set `Autostart at boot`
 - [Download](https://github.com/patatetom/jop/raw/refs/heads/main/jop.html) raw `jop.html` HTML file to the empty folder defined as `Root folder`
 - Check the code
-- Create a desktop shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/jop.html` URL
+- Create a home screen shortcut that opens your favorite browser to the HTML file with `http://localhost:8080/jop.html` URL
 
 <img alt="Simple HTTP Server on Android" src="simpleHTTPserver.android.png" height="390px"/> <img alt="JOP on Android" src="jop.android.png" height="390px"/>
 
@@ -119,7 +119,7 @@ Using JOP is relatively simple : enter the service (possibly prefixed), enter th
 
 Services memorized by the browser can be exported from the JOP interface using the dedicated icon : exporting involves copying a character string (eg. `?services=["myservice","-2 otherservice"]` for example) to the clipboard, which will then be used for an importation.
 
-> _This character string can easily be edited (corrected, expanded, etc...) using a simple text editor (such as `notepad` for example) before being transmitted for import._
+> _This character string can easily be edited (corrected, expanded, etc…) using a simple text editor (such as `notepad` for example) before being transmitted for import._
 
 Services can be imported into JOP by adding to the URL used the string previously exported from another instance of JOP : services present there will be incorporated into the existing list of services memorized by the browser.
 
@@ -127,7 +127,7 @@ Services can be imported into JOP by adding to the URL used the string previousl
 
 Services memorized by the browser can be deleted by adding `?resetServices` to the URL used (e.g. `file:///path/to/jop.html?resetServices`) : confirmation will be requested before deletion.
 
-> _The list of stored services can easily be « cleaned » by exporting the list, correcting the exportation, resetting the list and importing the corrected exportation._
+> _The list of memorized services can easily be « cleaned » by exporting the list, correcting the exportation, resetting the list and importing the corrected exportation._
 
 
 
