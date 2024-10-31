@@ -1,86 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="170.87933mm"
-   height="37.628712mm"
-   viewBox="0 0 170.87933 37.628712"
-   version="1.1"
-   id="svg1028"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="jop2.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1030"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.71446409"
-     inkscape:cx="340.81489"
-     inkscape:cy="72.781824"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1025" />
-  <g
-     inkscape:label="Calque 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-14.866648,-139.63076)">
-    <g
-       id="g69768"
-       inkscape:export-filename="/home/pascal/Images/g69768.png"
-       inkscape:export-xdpi="299.97299"
-       inkscape:export-ydpi="299.97299"
-       transform="translate(6.3861371,41.602324)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Arial Black';-inkscape-font-specification:'Arial Black,  Bold';letter-spacing:-8.46667px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="7.6123471"
-         y="135.01222"
-         id="text2390"><tspan
-           sodipodi:role="line"
-           id="tspan2388"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Arial Black';-inkscape-font-specification:'Arial Black,  Bold';writing-mode:lr-tb;baseline-shift:baseline;stroke-width:0.264583"
-           x="7.6123471"
-           y="135.01222"
-           dx="0"
-           dy="0"
-           rotate="0 0 0 0">JOP</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;letter-spacing:-7.40833px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="98.195953"
-         y="144.73566"
-         id="text43100"><tspan
-           sodipodi:role="line"
-           id="tspan43098"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';stroke-width:0.264583"
-           x="98.195953"
-           y="144.73566">***</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:50.8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="163.55927"
-         y="145.00851"
-         id="text57092"><tspan
-           sodipodi:role="line"
-           id="tspan57090"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';stroke-width:0.264583"
-           x="163.55927"
-           y="145.00851">-</tspan></text>
-    </g>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 2048 519" width="848" height="215" xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(594)" d="m0 0h82l1 4 15 1 16 3 18 4 17 5 13 5 12 5 15 8 14 9 16 12 8 7 20 20 6 9 3 3 3 5 3 3v2l5 1v-96l29-1h233l31 1 1 1 13 1 1 1 12 2 26 9 14 7 15 10 22 22 9 14 8 16 7 21 1 10 2 4 1 16 1 1v33l-1 1-1 15-3 13-1 1-2 10-6 16-7 14-7 11-7 8-6 8-3 3h-2v2l-11 8-17 11-10 5-16 6-13 4-6 2-10 1-9 2-9 1-3 1h-120v185l-2 1h-154v-94l-5 1-2 4-3 3-3 5-8 10-9 10-15 15-6 5-5 3-5 4-12 8-20 11-15 7-25 8-22 5-12 2-12 1-1 4h-85v-5h-14l-29-5-25-7-21-8-20-10-7-5-7-4-8-6-6-5-8-7-18-18-4-6-8-10-9-14-10-17h-5l-4 16-5 12-11 21-6 8-7 8-5 7h-2v2l-10 7-7 7-7 4-12 8-11 6-14 6-15 5-22 5-11 1-1 4h-79l-1-4-18-2-25-5-23-8-17-9-15-10-6-5-8-7-7-7-6-8-8-11-7-11-6-14-6-15-3-9-4-17-1-3-1-11-1-2v-18l2-2 4-1 15-1 1-1 15-1 8-2 11-1 2-1 16-1 1-1 16-2 4-1 15-1 1-1 14-1 10-2h11l1 1 1 32 4 16 3 8 8 11 7 6 11 5h30l10-4 8-6 4-5 5-9 5-13 1-10 1-1 1-341 3-3 28-1h25l99 1 2 2v94l7-1 9-13 7-8 7-9 13-13 8-6 7-6 15-10 14-8 23-11 16-6 9-2 1-1 15-3 5-2 10-1 1-1h19zm424 108-1 1v113h69l7-2 10-3 9-4 11-8 6-8 6-12 1-10 1-2v-14l-2-13-9-17-10-10-13-6-14-4-17-1zm-402 8-1 1-10 1-10 4-9 3-14 9-19 19-3 5-9 17-5 15-1 7-1 1-2 12-1 5-1 16-1 1v57l1 1 1 17 3 16 5 17 8 18 7 10 7 9 8 7 10 7 13 7 9 3 7 1 1 1h52l1-1 9-2 11-4 13-7 8-6 13-13 8-13 5-12 5-15 2-12 2-13 1-2 1-27 1-1v-39l-1-1-1-24-2-6-3-16-8-21-9-15-11-12-7-6-14-8-12-6-11-3-9-1-2-1z"/>
+<path transform="translate(1391,198)" d="m0 0h72l3 3v153l-1 1h-158l-1-2v-149l1-4 69-1z" fill="#020202"/>
+<path transform="translate(1568,198)" d="m0 0h72v156l-1 1h-156v-155l69-1z"/>
+<path transform="translate(1744,198)" d="m0 0h72v156l-1 1h-155l-1-1v-153l1-1 67-1z"/>
+<path transform="translate(1838,473)" d="m0 0h205l1 2 4 1v38h-210z"/>
+<path transform="translate(2045,476)" d="m0 0h3v38h-3z" fill="#FEFEFE"/>
+<path transform="translate(858,103)" d="m0 0" fill="#FEFEFE"/>
 </svg>

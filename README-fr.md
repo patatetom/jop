@@ -1,4 +1,4 @@
-# JOP***_
+# JOP▪▪▪_
 
 **Générateur de mot de passe dans le navigateur** inspiré de « [lesspass](https://github.com/lesspass/lesspass), a stateless password manager ».
 
