@@ -126,7 +126,7 @@ function fr() { // french
 	send.title = "Exporter la liste des services";
 	show.title = "Afficher/masquer le secret";
 	clear.title = "Nettoyer le formulaire";
-	copy.title = "Copier le mot de passe vers le presse-papiers";
+	copy.title = "Copier le mot de passe vers le presse-papiers (Ctrl-C)";
 	generate.value = "Générer »";
 	password.placeholder = "Mot de passe";
 	reset = "ATTENTION: Effacer la liste des services ?";
@@ -162,7 +162,7 @@ service.pattern = "^(\\+|-)?[1-9]? +[^\"']{3,}|^[^1-9 \"'+\\-][^\"']{2,}";
 function getProviders() {
 	let providers;
 	try {
-		providers = JSON.parse(window.localStorage.getItem("services") || "[]");
+		providers = JSON.parse(window.localStorage.getItem("services") || "[]");
 	} catch {
 		providers = [];
 	};
@@ -195,12 +195,23 @@ function hideSecret() {
 function restartSecretTimer() {
 	clearTimeout(secretTimer);
 	if (secret.value) {
-		secretTimer = setTimeout(function(){
+		secretTimer = setTimeout(function() {
 			secret.value = "";
 			secret.style.textDecorationLine = "none";
 		}, 30000);
 	};
 };
+document.addEventListener('keydown', function (event) {
+	if (
+		event.ctrlKey &&
+		(event.key === 'c' || event.key === 'C') &&
+		password.value
+	) {
+		var click = document.createEvent("MouseEvents");
+		click.initMouseEvent("click");
+		!copy.dispatchEvent(click);
+	};
+});
 service.addEventListener("input", function() {
 	password.value = "";
 	restartSecretTimer();
