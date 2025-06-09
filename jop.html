@@ -219,6 +219,10 @@ document.addEventListener('keydown', function(event) {
 		  clear.click();
 		  event.preventDefault();
 	  };
+	}
+	else if (event.key === 'Escape') {
+		clear.click();
+	  event.preventDefault();
 	};
 });
 service.addEventListener("input", function() {
