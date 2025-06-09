@@ -139,8 +139,8 @@ if (url.search) {
 		if (confirm(reset)) {
 			try {
 				localStorage.removeItem("services");
-			} catch {
-				true;
+			} catch(error) {
+				console.error('error occurred when deleting services:', error.message);
 			};
 		};
 		location.replace(url.origin.replace(/^null$/, "") + url.pathname);
@@ -149,7 +149,8 @@ if (url.search) {
 		if (providers) {
 			try {
 				providers = JSON.parse(decodeURI(providers));
-			} catch {
+			} catch(error) {
+				console.error('error occurred while processing services:', error.message);
 				providers = [];
 			};
 			providers = [...new Set(getProviders().concat(providers))];
@@ -164,7 +165,8 @@ function getProviders() {
 	let providers;
 	try {
 		providers = JSON.parse(window.localStorage.getItem("services") || "[]");
-	} catch {
+	} catch(error) {
+		console.error('error occurred while parsing services:', error.message);
 		providers = [];
 	};
 	return providers;
@@ -307,8 +309,8 @@ function generatePassword(event) {
 			services.innerHTML += ('<option value="' + service.value + '"/>');
 			try {
 				window.localStorage.setItem("services", JSON.stringify(providers));
-			} catch {
-				true;
+			} catch(error) {
+				console.error('error occurred while storing services:', error.message);
 			};
 		};
 		service.focus();
