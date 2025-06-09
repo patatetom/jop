@@ -92,7 +92,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2
 	</td></tr><tr><td>
 		<input id="generate" type="submit" value="Generate »" />
 	</td><td>
-		<img id="clear" title="Clear form" src="data:image/svg+xml;base64,	
+		<img id="clear" title="Clear form" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXIteC1jaXJjbGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48bGluZSB4MT0iMTUiIHkxPSI5IiB4Mj0iOSIgeTI9IjE1Ij48L2xpbmU+PGxpbmUgeDE9IjkiIHkxPSI5IiB4Mj0iMTUiIHkyPSIxNSI+PC9saW5lPjwvc3ZnPg==" />
 	</td></tr><tr><td>
 		<input id="password" type="text" placeholder="Password" readonly="true" />
@@ -116,7 +116,8 @@ if (navigator.language) {
 		try {
 			window[language]();
 		} catch {
-			true;
+			console.warn(language + '() function not available');
+			console.log('(see supplied fr() example to change interface language)');
 		};
 	};
 };
