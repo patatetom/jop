@@ -92,7 +92,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2
 	</td></tr><tr><td>
 		<input id="generate" type="submit" value="Generate »" />
 	</td><td>
-		<img id="clear" title="Clear form" src="data:image/svg+xml;base64,
+		<img id="clear" title="Clear form (Ctrl-X)" src="data:image/svg+xml;base64,
 PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJmZWF0aGVyIGZlYXRoZXIteC1jaXJjbGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48bGluZSB4MT0iMTUiIHkxPSI5IiB4Mj0iOSIgeTI9IjE1Ij48L2xpbmU+PGxpbmUgeDE9IjkiIHkxPSI5IiB4Mj0iMTUiIHkyPSIxNSI+PC9saW5lPjwvc3ZnPg==" />
 	</td></tr><tr><td>
 		<input id="password" type="text" placeholder="Password" readonly="true" />
@@ -126,7 +126,7 @@ function fr() { // french
 	document.head.querySelector('meta[name="description"]').content = "Générateur de mot de passe";
 	send.title = "Exporter la liste des services";
 	show.title = "Afficher/masquer le secret";
-	clear.title = "Nettoyer le formulaire";
+	clear.title = "Nettoyer le formulaire (Ctrl-X)";
 	copy.title = "Copier le mot de passe vers le presse-papiers (Ctrl-C)";
 	generate.value = "Générer »";
 	password.placeholder = "Mot de passe";
@@ -204,15 +204,21 @@ function restartSecretTimer() {
 		}, 30000);
 	};
 };
-document.addEventListener('keydown', function (event) {
-	if (
-		event.ctrlKey &&
-		(event.key === 'c' || event.key === 'C') &&
-		password.value
-	) {
-		var click = document.createEvent("MouseEvents");
-		click.initMouseEvent("click");
-		!copy.dispatchEvent(click);
+document.addEventListener('keydown', function(event) {
+	if (event.ctrlKey) {
+	  if (
+		  (event.key === 'c' || event.key === 'C') &&
+		  password.value
+	  ) {
+		  var click = document.createEvent("MouseEvents");
+		  click.initMouseEvent("click");
+		  !copy.dispatchEvent(click);
+		  event.preventDefault();
+	  }
+	  else if (event.key === 'x' || event.key === 'X') {
+		  clear.click();
+		  event.preventDefault();
+	  };
 	};
 });
 service.addEventListener("input", function() {
